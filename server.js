@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
@@ -32,45 +31,6 @@ const dbconnection = require('./util/dbconnection').dbconnection;
 //importing usermade modules
 const rootDir = require('./util/path');
 
-if (!fs.existsSync(path.join(rootDir,'images'))) {
-
-   fs.mkdir('images', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		 fs.mkdir('images/batches', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		console.log('directory is created');
-		}
-	});
-	 fs.mkdir('images/student', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		console.log('directory is created');
-		}
-	});
-	  fs.mkdir('images/teacher', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		console.log('directory is created');
-		}
-	});
-	   fs.mkdir('images/user', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		console.log('directory is created');
-		}
-	});
-		console.log('directory is created');
-		}
-	});
-
-}
 //-------------------------
 app.use(helmet());
 app.use(compression());
