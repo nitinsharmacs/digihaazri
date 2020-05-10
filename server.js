@@ -82,10 +82,9 @@ const fileFilter = (req, file, cb) =>{
 //passing multer as middleware
 app.use(multer({storage: fileStorage, fileFilter: fileFilter}).fields([{name: 'profileimageinput', maxCount: 1}, {name:'uploadimage', maxCount:1}, {name: 'studentimage', maxCount:1}, {name:'teacherimage', maxCount:1}]));
 //setting store for storing session
-const URL1 = 'mongodb://127.0.0.1:27017/expressJs';
-const URL2 = 'mongodb+srv://nitin:nitin123@cluster0-jx9oe.mongodb.net/expressJs?retryWrites=true&w=majority';
+
 const store = new MongodbStore({
-	uri: URL1,
+	uri: process.env.PORT,
 	collection: 'sessions'
 });
 //making session middleware
