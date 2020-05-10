@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
@@ -8,6 +9,18 @@ const multer = require('multer');	//importing multer for download and uploading 
 const flash = require('connect-flash');	//importing flash for flashing some information to the front-end
 const helmet = require('helmet');
 const compression = require('compression');
+
+//checking for directory presence
+if (fs.existsSync(path.join(rootDir,'images'))) {
+   fs.mkdir('images', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+		console.log('directory is created');
+		}
+	});
+}
+
 //setting ejs template engine
 app.set('view engine', 'ejs');	//setting view engine as ejs
 app.set('views', 'views');		//setting views folder is views , that is where views are
