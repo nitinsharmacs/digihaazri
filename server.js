@@ -38,7 +38,7 @@ if (!fs.existsSync(path.join(rootDir,'images'))) {
  		if(err){
 		console.log(err);
 		} else {
-			 fs.mkdir('images/batches', (err)=>{
+		 fs.mkdir('images/batches', (err)=>{
  		if(err){
 		console.log(err);
 		} else {
@@ -98,11 +98,11 @@ app.use((req, res, next)=>{
 //making fileStorage for multer files
 const fileStorage = multer.diskStorage({
 	destination: (req, file, cb) =>{
-		let dest = path.resolve(__dirname, 'images');
+		let dest = 'images';
 		console.log(req.body.imageinfo);
 		if(req.body.imageinfo){
-			//dest = 'images/' + req.body.imageinfo;
-			dest = path.resolve(__dirname,'images/'+req.body.imageinfo);
+			dest = 'images/' + req.body.imageinfo;
+			
 		}
 		console.log(req.body);
 		cb(null, dest);
