@@ -10,16 +10,6 @@ const flash = require('connect-flash');	//importing flash for flashing some info
 const helmet = require('helmet');
 const compression = require('compression');
 
-//checking for directory presence
-if (fs.existsSync(path.join(rootDir,'images'))) {
-   fs.mkdir('images', (err)=>{
- 		if(err){
-		console.log(err);
-		} else {
-		console.log('directory is created');
-		}
-	});
-}
 
 //setting ejs template engine
 app.set('view engine', 'ejs');	//setting view engine as ejs
@@ -41,6 +31,46 @@ const dbconnection = require('./util/dbconnection').dbconnection;
 
 //importing usermade modules
 const rootDir = require('./util/path');
+
+if (!fs.existsSync(path.join(rootDir,'images'))) {
+
+   fs.mkdir('images', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+			 fs.mkdir('images/batches', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+		console.log('directory is created');
+		}
+	});
+	 fs.mkdir('images/student', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+		console.log('directory is created');
+		}
+	});
+	  fs.mkdir('images/teacher', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+		console.log('directory is created');
+		}
+	});
+	   fs.mkdir('images/user', (err)=>{
+ 		if(err){
+		console.log(err);
+		} else {
+		console.log('directory is created');
+		}
+	});
+		console.log('directory is created');
+		}
+	});
+
+}
 //-------------------------
 app.use(helmet());
 app.use(compression());
