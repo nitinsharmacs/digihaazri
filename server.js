@@ -98,10 +98,11 @@ app.use((req, res, next)=>{
 //making fileStorage for multer files
 const fileStorage = multer.diskStorage({
 	destination: (req, file, cb) =>{
-		let dest = 'images';
+		let dest = path.resolve(__dirname, 'images');
 		console.log(req.body.imageinfo);
 		if(req.body.imageinfo){
-			dest = 'images/' + req.body.imageinfo;
+			//dest = 'images/' + req.body.imageinfo;
+			dest = path.resolve(__dirname,'images/'+req.body.imageinfo);
 		}
 		console.log(req.body);
 		cb(null, dest);
