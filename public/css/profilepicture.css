@@ -1,0 +1,63 @@
+.profilepicturediv{
+	position:fixed;top:0;bottom:0;right:0;left:0;background:rgba(0, 0, 0, 0.4);z-index:7;overflow-y: auto;display: none;
+}
+.profilepicturediv.show{
+	display:block;
+}
+.profilepicture{
+	transform: scale(0, 0);transition: 0.2s linear;margin-top:20vh;
+}
+.profilepicture.show{
+	transform: scale(1, 1);
+}
+.profilepicture-closebutton{
+	width:30px;height:30px;background:#1796ff;border:none;border-radius:50px;position: absolute;margin-top:-20px;margin-left:-20px;font-weight:600;color:white;box-shadow:1px 1px 3px #1796ff;
+}
+.profilepicture-form{
+	padding-top:30px;
+}
+.profilepicture-imagediv{
+text-align:center;
+}
+.profilepicture-img{
+	width:70%;height:30vh;border-radius:10px;filter:drop-shadow(4px 4px 4px black);
+}
+.profilepicture-controls{
+	margin-top:30px;padding:10px;text-align:center;
+}
+.uploadlabel{
+	position:absolute;background:black;color:white;padding:5px;z-index: 1;display: none;
+}
+
+input[type=image].yesimagebutton{
+	height:40px;opacity:1;transition:0.2s linear;width:40px;filter:drop-shadow(1px 1px 1px black);
+}
+input[type=image].yesimagebutton:hover + .uploadlabel {
+	display: block;
+}
+
+input[type=image].yesimagebutton:disabled{
+cursor:not-allowed;opacity: 0.5;
+}
+
+
+.changeimagebutton{
+	height:35px;width:35px;filter:drop-shadow(1px 1px 1px black);
+}
+
+/* MEDIA QUERIES */
+@media (min-width:800px){
+	.profilepicture{
+		width:700px;
+	}	
+
+	.profilepicture-img{
+		width:400px;height:400px;
+	}
+}
+
+@media (max-width:800px){
+		.profilepicture-form{
+			max-height:40vh;
+	}
+}

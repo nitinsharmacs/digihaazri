@@ -1,0 +1,133 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/adminwindows.css">
+<link rel="stylesheet" type="text/css" href="/css/batchform.css">
+</head>
+<body onload='fillbackwardstack(`<%= previouswindow %>`);'>
+
+<div class='con'  id='content'>
+		<div class='dashboard'>
+
+		<!-- making top navigation -->
+			<%- include('../includes/navigation.ejs') %>
+		<!-- top navigation end -->
+
+		<!-- vertical dashboard control options for desktop view -->
+			<%- include('../includes/verticalcontrols.ejs') %>
+		<!-- vertical controls end -->
+
+		<!-- vertical dashboard control options for mobile view -->
+			<%- include('../includes/mobilecontrols.ejs') %>
+		<!-- vertical controls end -->
+		<!-- horizontal controls for mobile view -->
+		<%- include('../includes/horizontalcontrols.ejs') %>
+		<!-- end  of horizontal controls --->
+		<!-- user profile popup -->
+			<%- include('../includes/profilepopup.ejs') %>
+		<!-- user profile popup end -->
+	
+
+		<!-- controls for content of the window-->
+			<div class='controldiv'>
+
+				<div class='admincontroldiv'>
+					<div class='admincontroldiv-header'>
+						<div class='header-controls'>
+							<h2>Batches</h2>
+							<ul class='control-list'>
+								<li><a href="/admin/batch" class='<%= path=="/batch"?"bottom-border": ""%>'>Batches</a></li>
+								<li><a href="/admin/student" class='<%= path=="/student"?"bottom-border":"" %>'>Students</a></li>
+								<li><a href="/admin/teacher">Teachers</a></li>
+								<li><a href="#">Records</a></li>
+								<li><img src="/img/icons/more.png"></li>
+							</ul>
+							<%- include('../includes/usercontrols.ejs') %>
+							<br><br>
+						</div>
+						<div class='header-button'>
+							<% if(batchPresent){ %>
+							<a href="#" class='createnewbatch-button2'>New Batch</a>
+							<% } %>
+						</div>
+					</div>
+					<hr style='border:1px solid white'>
+					<% if(error.length>0){ %>
+					<div class='errorwindow'>
+								<div class='error'>
+									<button class='errorclosebutton'>X</button>
+									<h4><%= error[0] %></h4>
+								</div>
+					</div>
+					<% } %>
+					<div class='admincontentdiv'>
+							<div class='batchcontroldiv-content'>
+							<!-- case 1st batchboxes are here only when there are batches present for particular user -->
+							
+							<!-- <div class='batchbox'>
+								<dir class='batchbox-header'>
+									<img src="/image/nitin.jpg" alt='img' onclick='opendialog("45h7dhf7", "maths")' >
+									<h3>batch name</h3>
+								</dir>
+								<div class='batchbox-controls'>
+									<img src="/img/icons/more.png" >
+								</div>
+							</div> -->
+							
+							<!-- case 1st end of batchboxes -->
+						</div>
+						<% if(!batchPresent){ %>
+						<!-- case 2nd when there is not any batch in database-->
+							<div class='newcontrol' >
+								<button class='createnewbatch-button'>No Batch Found, Create Batch</button>
+							</div>
+						<!-- case 2nd end -->
+						<% } %>
+
+							<!-- FOR LOADING PURPOSE -->
+							 <div class="loadingdiv">
+						 	<h3>Loading Batches ...</h3>
+						 	<div class='loader'>
+						 		<div></div>
+							    <div></div>
+							    <div></div>
+							    <div></div>
+						 	</div>
+		   				  </div>
+							<!-- END OF LOADING PURPOSE -->
+
+					</div>
+						
+				</div>
+
+			</div>
+		<!-- controls end -->
+
+		<!-- profile updation -->
+		<%- include('../includes/updateprofile.ejs') %>
+		<!-- profile updation end -->
+
+		<!-- change profile picture form -->
+		<%- include('../includes/profilepicture.ejs') %>
+		<!-- change profile picture form end -->
+		<!-- window for create new batch -->
+		<%- include('../includes/batchform.ejs') %>
+		<!-- end of window for create new batch -->
+		<!-- dialog control box -->
+		<%- include('../includes/dialogbox.ejs') %>
+		<!-- end of dialog control box -->
+
+		<!-- profilepassword input dialog box -->
+		<%- include('../includes/profilepassword.ejs') %>
+		<!-- end of profilepassword input dialog box -->
+		<!-- error message popup -->
+		<%- include('../includes/errorbox.ejs') %>
+		<!-- end of error message popup -->
+	</div>
+</div>
+	
+</body>
+<script type="text/javascript" src='/scripts/lib/jquery-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/underscore-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/backbone-min.js'></script>
+<script type="text/javascript" src='/scripts/loadfirst/loadfirst.js' ></script>
+<script src='/scripts/lib/require.js' data-main='/scripts/batcheswindow/main'></script>
+</html>

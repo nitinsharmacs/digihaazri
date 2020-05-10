@@ -1,0 +1,99 @@
+.absentwindowdiv{
+	display: none;
+}
+.absentwindowdiv.show{
+	display:block;
+}
+.absentwindow{
+	position:relative;
+}
+.absentwindow.slideleft{
+	animation: slideleft 1s;
+}
+.absentwindow.slideright{
+	animation: slideright 0.7s;
+}
+
+.absentwindow-header{
+	background: lightgreen;display:flex;align-items:center;padding:0px 20px 0px 20px;border-radius:5px;box-shadow:1px 1px 5px black;
+}
+.absentwindow-back{
+	width:30px;height:30px;transform:rotate(90deg);
+}
+.absentwindow-header .absentwindow-heading{
+	flex:1;text-align:center;
+}
+.absentwindow-content{
+	margin-top:50px;transition:0.2s linear;
+}
+.absentwindow-studentlist{
+	display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap:10px;width:80%;margin-left:auto;margin-right:auto;transition:0.2s linear;
+}
+
+.absentwindow-submit{
+	text-align:center;padding:10px;background:lightgreen;margin-top:50px;border-radius:10px;box-shadow:1px 1px 5px black;
+}
+.absentwindow-submit button{
+	padding:5px 15px 5px 15px;border:2px solid black;background:none;border-radius:5px;transition:0.2s linear;
+}
+.absentwindow-submit button:hover{
+	background:black;color:white;box-shadow:2px 2px 5px black;font-weight:bold;
+}
+.absentwindow-messagebox {
+	margin-top:20px;display: flex;flex-flow:column;display: none;position: relative;
+}
+.absentwindow-messagebox.show {
+	display: flex;animation: slideright 0.2s linear;
+}
+.absentwindow-messagebox label {
+	font-size:1.2rem;font-weight:bold;display: flex;align-items: center;margin-bottom:20px;
+}
+.absentwindow-messagebox label:after, .absentwindow-messagebox label:before {
+	content: '';width:50px;height:2px;background: black;display:inline-block;margin:0px 5px;
+}
+.absentwindow-messagebox textarea {
+	padding:5px 10px;font-size:1.2rem;width:80%;resize: none;border-radius: 10px;outline: none;
+}
+
+.sendmessagebutton {
+	height:40px;width:40px;border:transparent;background:url('/img/icons/sendmessageIcon.svg');background-size: 90%;margin-left:75%;margin-top:-50px;background-repeat: no-repeat;
+}
+.sendmessagebutton:disabled {
+	opacity:0.4;cursor: not-allowed;
+}
+
+
+@keyframes slideright{
+	0%{
+		left:-2000px;transform: scale(0, 0);opacity:0.1;
+	}
+ 	25%{
+ 		left:-900px;transform:scale(0.4, 0.4);opacity:0.1;
+ 	}
+	100%{
+		left:0px;
+	}
+}
+
+@keyframes slideleft{
+	0%{
+		left: 0px;opacity:0.6;
+	}
+	45%{ left:-2000px; transform:scale(0, 0);opacity:0.1;}
+	
+	100%{
+		left:0px;
+			}
+}
+
+/* animation for studentcard */
+
+@keyframes come{
+	0%{
+		transform:scale(0, 0);opacity: 0.1
+	}
+	100%{
+		transform:scale(1, 1);opacity: 1
+	}
+}
+

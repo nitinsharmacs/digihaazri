@@ -1,0 +1,92 @@
+
+	.editbatchdiv{
+		position:fixed;top:0;right:0;left:0;bottom:0;overflow:auto;z-index: 6;background: rgba(255, 255, 255, 0.5);display: none;
+	}
+	.editbatchdiv.show{
+		display:block;
+	}
+	.editbatch{
+		width:500px;background:lightblue;padding:10px;margin-left:auto;margin-right:auto;margin-top:20vh;border-radius:0px 10px 10px 10px;transform: perspective(1000px) rotateY(0deg);transition: 0.2s linear;display:none;box-shadow:1px 1px 2px black;
+	}
+	.editbatch.show{
+		display:block;transform: perspective(1000px) rotateY(0deg);animation:comeup 0.3s linear;
+	}
+	.editbatch-closebutton{
+		width:30px;height:30px;background:lightgreen;border:none;border-radius:50px;position: absolute;margin-top:-20px;margin-left:-20px;font-weight:600;
+	}
+	.editbatch-closebutton:hover{
+		cursor:pointer;
+	}
+	.editbatch-header{
+		display:flex;align-items: center;justify-content: center;
+	}
+	.editbatch-header img{
+		width:50px;height:50px;margin-right:10px;
+	}
+	.editbatch-header h3{
+		font-size:1.5rem;
+	}
+	.editbatch-form{
+
+	}
+	.editbatch-batchimage{
+		display:flex;padding:0px 20px;margin-top:20px;align-items: center;
+	}
+	.batchimage{
+			height:100px;width:100px;box-shadow:1px 1px 5px black;border-radius:10px;margin-left:8%;
+	}
+	.batchimagecontrol{
+		display:flex;align-items:center;padding-left:10px;
+	}
+	.batchuploadimagebutton{
+		margin-left:20px;padding:10px;background:#7abcff;border-radius:10px; border:none;color:white;
+	}
+	.batchuploadimagebutton:hover{
+		cursor:pointer;opacity:0.4;
+	}
+	.editbatch-details{
+		padding:10px;display: flex;flex-direction: column;
+	}
+	.editbatch-details div{
+		display:flex;flex-direction: column;margin-top:20px;margin-bottom:20px;
+	}
+	.editbatch-details div input{
+		padding:10px;border:2px solid blue;background:transparent;border-radius:5px;text-align:center;z-index:1;
+	}
+	.editbatch-details div span{
+		position: absolute; margin-left:10px;margin-top:10px;transition:0.2s ease-out;
+	}
+	.editbatch-details div span.spanslideup{
+		margin-top:-15px;border:2px solid lightblue;padding:5px;background:lightblue;color:blue;z-index: 2;
+	}
+	.editbatch-details button{
+		height:35px;width:80px;margin:auto;border:2px solid #448aff;background:none;font-weight: 600;border-radius:10px;box-shadow:2px 2px 1px #448aff; transition: 0.2s ease-out;
+	}
+		.editbatch-details button:hover{
+			transform: scale(0.95, 0.95);cursor: pointer;
+		}
+		.batchpassworddiv img{
+			z-index:2;height:30px;width:30px;position: absolute;margin-left:430px;margin-top:5px;
+		}
+
+		.batchpasswordinput{
+
+		}
+
+
+
+/*ANIMATION FOR PROFILE WINDOW*/
+@keyframes comeup{
+	0%{
+			transform: perspective(1000px) rotateY(70deg) scale(0.0, 0.0);
+	}
+	50%{
+		transform: perspective(1000px) rotateY(60deg) scale(0.1, 0.1);
+	}
+	75%{
+		transform: perspective(1000px) rotateY(50deg) scale(0.4, 0.4);
+	}
+	100%{
+		transform: perspective(1000px) rotateY(10deg) scale(0.9, 0.9);
+	}
+}

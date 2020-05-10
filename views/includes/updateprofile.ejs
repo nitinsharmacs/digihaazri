@@ -1,0 +1,50 @@
+<div class='updateprofilediv'>
+	
+	<div class='updateprofile'>
+		<div class='updateprofile-header'>
+			<img class='backimg' src="/img/icons/traingle.png" alt='backimg' >
+			<img src="/img/icons/usericon.png" alt='profileheader-img'>
+			<h3><%= forteacher?"Teacher Profile":"User Profile" %></h3>
+		</div>
+		<div class='updateprofile-container'>
+			<form class='profile-form' name='profile-form' method='POST' action='<%= forteacher?"/admin/particularbatch/updateprofile":"/admin/updateprofile" %>'>
+				<div class='updateprofile-setimage'>
+					<img id='profile-image' src="/<%= userinfo.userimageurl %>">
+				</div>
+				<div class='updateprofile-details'>
+					<% if(forteacher){ %>
+					<label for='teachername'>Your Name : </label>
+					<input type="text" name="teachername" placeholder='Your name' class='teachernameinput' value='<%= userinfo.username %>'>
+					<% } %>
+					<label for='phonenumber'>Phone : </label>
+					<input type="text" name="userphone" placeholder='Phone' class='phonenumberinput' value='<%= userinfo.userphone %>'>
+					<label for='useremail'>Email : </label>
+					<input type="email" name="useremail" placeholder='Email' class='useremailinput' value='<%= userinfo.useremail %>'>
+					<label for='address1'>Address : </label>
+					<input type="text" name="user_address" placeholder='Address' class='addressinput' value='<%= userinfo.useraddress %>'>
+					<button type='submit' onclick='return(validateprofile(<%= forteacher %>))' class='button'>Update</button>
+				</div>
+			</form>
+			<form  class='updatepassword-form' name='updatepassword-form' method='POST' action='<%= forteacher?"/admin/particularbatch/updatepassword":"/admin/updatepassword" %>'>
+				<label for='update-password'>Update Password : </label>
+				<input type="password" name="oldpassword" placeholder='Old password*'>
+				<input type="password" name="newpassword" placeholder='New password*'>
+				<input type="password" name="confirmpassword" placeholder='Confirm password*'>
+				<button type='submit' onclick='return(validatePassword(false))' class='button'>
+					Update
+				</button>
+			</form>
+			<% if(!forteacher){ %>
+				<form class='updatepassword-form' name='updateprofilepassword-form' action='/admin/updateprofilepassword' method='POST'>
+					<label for='update-password'>Update Profile Passcode : </label>
+					<input type="password" name="oldprofilepassword" placeholder='Old password*'>
+					<input type="password" name="newprofilepassword" placeholder='New password*'>
+					<input type="password" name="confirmprofilepassword" placeholder='Confirm password*'>
+					<button type='submit' onclick='return(validatePassword(true))' class='button'>
+						Update
+					</button>
+				</form>
+			<% } %>
+		</div>
+	</div>
+</div>

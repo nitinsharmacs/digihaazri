@@ -1,0 +1,42 @@
+<div class="updatestudent">
+	<div class='updatestudent-header'>
+		<img src="/img/icons/traingle.png" class='updatestudent-back' onclick="removeupdatewindow();">
+		<img src="/images/usericon.png">
+		<h4>Update Student</h4>
+	</div>
+	<div class='updatestudent-content'>
+		<div class='updatestudent-studentimagediv'>
+			<div class='updatestudent-studentimage'>
+				<img src="/images/usericon.png" class='update-studentimage' onchange='return(enableupdatebutton());'>
+				<button class='update-changeimage' onclick='document.getElementById("changestudentimage").click(); return false;'></button>
+				<input type="file" name="changestudentimage" id='changestudentimage' onchange="readUrl2(this, '.update-studentimage');">
+			</div>
+		</div>
+		<div class='updatestudent-data'>
+			<div class='studentnamediv'>
+				<span class='studentnamespan1'>Student name</span>
+				<input type="text" name="studentname" class='studentnameinput1' onchange='return(enableupdatebutton());'>
+			</div>
+
+			<div class='studentphonediv'>
+				<span class='studentphonespan1'>Student phone</span>
+				<input class='studentphoneinput1' type="text" name="studentphone" onchange='return(enableupdatebutton());'>	
+			</div>
+					
+			<div class='studentguardiandiv'>
+				<span class='studentguardianspan1'>Guardian contact(email/phone)</span>
+				<input class='studentguardianinput1' type="text" name="studentguardian" onchange='return(enableupdatebutton());'>	
+			</div>
+
+			<div class='studentaddressdiv'>
+				<span class='studentaddressspan1'>Student address</span>
+				<input type="text" name="studentaddress" class='studentaddressinput1' onchange='return(enableupdatebutton());'>
+			</div>
+
+		</div>
+		<div class='updatestudent-controls'>
+			<span class='showmessagespan'></span><br>
+			<button class='updatestudent-updatebutton' disabled>Update</button>
+		</div>
+	</div>
+</div>

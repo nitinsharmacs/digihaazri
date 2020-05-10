@@ -1,0 +1,39 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "expressJs first file",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " nodemon server.js",
+    "start:dev":"nodemon server.js"
+  },
+  "author": "nitin sharma",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.2.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.10.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.3.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nexmo": "^2.6.0",
+    "nodemailer": "^6.3.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pdfkit": "^0.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

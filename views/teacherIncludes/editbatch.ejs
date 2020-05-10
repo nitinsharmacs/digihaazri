@@ -1,0 +1,36 @@
+
+<div class='editbatchdiv'>
+
+	<div class='editbatch  '>
+		<button class='editbatch-closebutton'>X</button>
+		<div class='editbatch-header'>
+			<img src="/img/icons/usericon.png" alt='profileheader-img'>
+			<h3>Edit Batch</h3>
+		</div>
+		<div class='editbatch-container'>
+			<form name='editbatch-form' class="editbatch-form" method='POST' action='/admin/particularbatch/editbatch' enctype="multipart/form-data">
+				<div class='editbatch-batchimage'>
+					
+					<div class='batchimagecontrol'>
+						<label for='batchimage'>Batch Icon : </label>
+						<!-- <input type="button" name="button" value='Change Icon' class='batchuploadimagebutton' > -->
+					<input type="file" style='display:none;' name="uploadimage" id='batchuploadimageinput' onchange='readUrl2(this, ".batchimage")'>
+					</div>
+					<img class='batchimage' src="/<%= batchimageurl %>" onclick='document.getElementById("batchuploadimageinput").click(); return false;' >
+				</div>
+				<div class='editbatch-details'>
+					<div class='batchnamediv'>
+					<span class='batchnamespan'>Batch name</span>
+					<input class='batchnameinput' type="text" name="batchname" value='<%= batchname%>'>
+					</div>
+					<div class='teachernamediv'>
+					<span class='teachernamespan'>Teacher name</span>
+					<input class='edit-teachernameinput' type="text" name="teachername" value='<%=userinfo.username%>'>	
+					</div>
+					<button type='submit' onclick='return(validateeditbatch());'>Edit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br><br>
+</div>

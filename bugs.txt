@@ -1,0 +1,4 @@
+1. while using two browsers and logined into one account and one batch. editing batch info in one browser does not change the info of the same batch in another browser.(use websockets). Also when window in another browser is refreshed, the  batch teacher become updated but the session batchinfo of second browser does not updated and batchname shows the old batchname. (solve this bug)
+
+
+

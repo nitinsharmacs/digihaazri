@@ -1,0 +1,415 @@
+.particularbatchdiv{
+	position:relative;width:100%;margin-left:auto;margin-right:auto;
+}
+.particularbatchdiv.slideleft{
+	animation:slideleft;animation-duration:0.7s;
+}
+.particularbatchdiv.slideright{
+	animation: slideright 0.7s;
+}
+.particularbatch-header{
+	display:flex;flex-direction: column;border-bottom:2px groove #a212f5;padding-bottom: 20px;
+}
+.particularbatch-heading{
+	display:flex;align-items:center;
+}
+.particularbatch-heading img{
+	width:50px;height:50px;border-radius:50px;
+}
+.particularbatch-heading h2{
+	color:white;margin-left:10px;text-transform: capitalize;
+}
+.particularbatch-controls{
+	display:flex;align-items:center;
+}
+.particularbatch-controls .add-student{
+	margin-left:auto;
+}
+.particularbatch-controls img{
+	height:30px;width:30px;margin-left:10px;margin-right:10px;
+}
+.particularbatch-controls .take-attendence{
+	display:block;text-decoration:none;background:#0892FF;height:35px;line-height:35px;padding:0px 10px 0px 10px;border-radius:20px;font-weight:500;color:white;transition:0.2s linear;
+}
+.particularbatch-controls .take-attendence:hover{
+	background:rgba(0, 146, 255, 0.5);box-shadow:1px 1px 2px black;
+}
+.particularbatch-controls .particularbatch-more{
+	transition: 0.2s linear;border-radius:50px;transform:rotate(90deg);
+}
+.particularbatch-controls .particularbatch-more:hover{
+	background:rgba(255, 255, 255, 0.5);
+}
+
+.particularbatch-content{
+	margin-left:auto;margin-right:auto;margin-top:100px;
+}
+
+.particularbatch-contentheading{
+
+}
+.particularbatch-contentheading h3{
+
+}
+.particularbatch-contenthistory{
+	margin-right:auto;margin-left:auto;
+}
+
+.attendencehistoryheadingdiv{
+	background:rgb(23, 150, 255);box-shadow: 1px 1px 1px black;border-radius:5px;margin-bottom:40px;
+}
+.attendencehistoryheading{
+	display:flex;align-items: center;height: 50px;padding: 0px 10px 0px 10px;margin-bottom: 20px;margin-left:auto;margin-right:auto;
+}
+.attendencehistoryheading h4{
+	flex:1;color:white;
+}
+.attendencehistoryboxdiv{
+	box-shadow: 0px 0px 2px black;border-radius: 5px;margin-top:10px;margin-bottom:10px;margin-left:auto;margin-right:auto;position:relative;animation:slideright 0.5s ease-out;
+}
+.attendencehistoryboxdiv.remove{
+	animation:slideleft 0.5s ease-out;
+}
+
+.attendencehistorybox {
+	display: flex;align-items: center;
+}
+.attendencehistorybox:hover {
+	cursor: pointer;
+}
+.attendencehistorybox-select {
+	padding:0px 10px;
+}
+.attendencehistorybox-select img {
+	height:30px;width:30px;border-radius: 100%;margin-top:20px;border:1px solid white;filter:drop-shadow(0px 0px 2px black);position: absolute;transition: 0.5s ease-out;
+}
+.historyselectimage {
+	display: none;
+}
+.historyselectimage.show {
+	display: block
+}
+.attendencehistorybox-info {
+	display: flex;flex:1;
+}
+.attendencehistorybox-info h4 {
+	flex:1;
+}
+
+/*
+ .attendencehistorybox-info h4:not(:first-child):not(:last-child){
+	border-right:1px solid black;border-left:1px solid black;
+}
+*/
+.attendencehistorybox-controls{
+	padding:0px;padding-right:50px;display: flex;flex-flow: row;justify-content: center;padding-bottom:10px;
+}
+.attendencehistorybox-controls div{
+height:25px;width:25px;margin-left:10px;
+}
+.attendencehistorybox-controls div:hover{
+	cursor: pointer;
+}
+.attendencehistorybox-controls div:nth-child(1) {
+	margin-left: auto;
+}
+.openhistorybutton {
+	background-image:url('/img/icons/inspecticon.png');background-size:cover;
+}
+
+.deletehistorybutton {
+	background-image:url('/img/icons/deleteicon1.png');background-size:cover;transition:0.2s linear;
+}
+.deletehistorybutton.change {
+	background-image:url('/img/icons/deleteicon2.png');
+}
+.particularbatch-loadmore{
+	margin-top: 20px;display: none;
+}
+.particularbatch-loadmore a{
+	text-decoration:none;display:block;height:35px;background: #0892FF;width: 120px;margin:auto;text-align:center;line-height: 35px;color:white;border-radius: 10px;transition:0.2s linear;
+}
+.particularbatch-loadmore a:hover{
+		background:rgba(0, 146, 255, 0.5);
+}
+
+
+/* css for attendence hisory inspect window */
+
+.historyinspectdiv{
+	position:relative;display: none;
+}
+.historyinspectdiv.slideleft{
+	animation: slideleft 0.7s;
+}
+.historyinspectdiv.slideright{
+	animation:slideright 0.7s;
+}
+.historyinspect{
+
+}
+.historyinspect-header{
+	background:white;padding:10px;border-radius:2px;box-shadow:1px 1px 5px black;text-align:center;margin:auto;max-width:1024px;
+}
+.historyinspect-header h3{
+	margin:0;
+}
+.historyinspect-content{
+	padding:1px 10px 1px 10px;width:90%;margin:auto;
+}
+.historyinspect-datetime{
+	display:flex;
+}
+.historyinspect-datetime h4{
+	flex:1;
+}
+.historyinspect-datetime h4:nth-child(2){
+	text-align:right;
+}
+.historyinspect-data{
+
+}
+.historyinspect-data ul{
+	list-style-type:none;
+}
+.historyinspect-data ul li{
+	margin-top:15px;font-weight:500;
+}
+.historyinspect-studentlist{
+	display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap:10px;margin-left:auto;margin-right:auto;width:80%;margin-top:50px;
+}
+.historyinspect-studentcard{
+	background:linear-gradient(to bottom, #7abcff 1%, #7abcff 30% , white 30%);width:80%;border-radius:10px;margin-left:auto;margin-right:auto;transition:0.2s linear;box-shadow: 1px 1px 6px black;
+}
+.historyinspect-studentcard:hover{
+	cursor:pointer;transform:scale(1.05, 1.05);
+}
+.studcard-image{
+	text-align:center;margin-top:20px;
+}
+.studcard-image img{
+	height:100px;width:100px;border-radius:200px;background:white;text-align:center;
+}
+.studcard-info{
+	text-align:center;
+}
+.studcard-info h4{
+	margin:10px;
+}
+.studcard-controls{
+	text-align:right;padding:0px 10px 10px 10px;
+}
+.historyinspect-controls{
+	margin:auto;background:white;padding:10px;margin-top:50px;text-align:center;box-shadow:1px 1px 2px black;border-radius:2px;display:none;max-width:1024px;
+}
+/*.historyinspect-controls button{
+	background:none;border:2px solid black;border-radius:5px;transition: 0.2s linear;
+}
+.historyinspect-controls button:hover, .historyinspect-controls button:active{
+	background:black;color:white;transform: scale(0.95, 0.95);box-shadow:1px 1px 2px black;
+}*/
+/* --------------------------------  */
+
+/* CSS FOR STUDENT INFORMATION WINDOW */
+.studentinfodiv{
+	position:fixed;top:0;bottom:0;left:0;right:0;background: rgba(250, 250, 250, 0.8);z-index:100;overflow-y:auto;display:none;
+}
+.studentinfo{
+	position:relative;margin-top:2vh;display:none;
+}
+.studentinfo.slideleft{
+	animation:slideleft 1s;
+}
+.studentinfo.slideright{
+	animation:slideright 0.4s;
+}
+.studentinfo-header, .updatestudent-header{
+	background:white;display:flex;align-items:center;padding:5px 10px;box-shadow:0px 0px 5px black;border-radius:2px;width:90%;margin-left:auto;margin-right:auto;
+}
+.studentinfo-header img, .updatestudent-header img{
+	width:50px;
+}
+.studentinfo-header h4, .updatestudent-header h4{
+	margin:0px auto;margin-right:auto;margin-left:20px;font-size:1.2rem;
+}
+img.studentinfo-back, img.updatestudent-back{
+	height:25px;width:25px;transform:rotate(90deg);margin-right:auto;
+}
+.studentinfo-content, .updatestudent-content{
+	padding:10px;
+}
+.studentinfo-image{
+	margin-top:50px;text-align:center;
+}
+.studentinfo-image img{
+	width:200px;height:200px;border-radius:200px;
+}
+.studentinfo-data{
+
+}
+.studentinfo-ul{
+	list-style-type:none;
+}
+.studentinfo-ul li{
+	font-size:1rem;font-weight:600;margin-top:10px;margin-bottom:10px;padding:10px;box-shadow:1px 1px 1px black;width:400px;margin-left:auto;margin-right:auto;border-radius:2px;
+}
+.studentinfo-rating{
+	width:500px;margin-left:auto;margin-right:auto;margin-top:50px;
+}
+.progressdiv{
+	background:lightgrey;height:35px;border-radius:50px;box-shadow:inset -1px 1px 2px black;
+}
+.progressbar{
+	height:35px;text-align:center;line-height: 35px;background:lightcoral;width:0%;border-radius:50px;color:white;font-weight:bold;color:black;box-shadow:inset 1px 1px 1px black;
+}
+.studentinfo-controls{
+	text-align:center;margin-top:50px;
+}
+.studentinfo-controls button{
+	padding:5px 10px 5px 10px;background:none;border:2px solid black;border-radius:10px;transition:0.2s linear;margin-left:auto;margin-right:auto;
+}
+.studentinfo-controls button:hover{
+	background:black;color:white;box-shadow:1px 1px 2px black;
+}
+button.updatestudent-updatebutton:disabled{
+	cursor: not-allowed;
+}
+
+/* ------------------------------------ */
+
+/* UPDATE STUDENT BLOCK CSS */
+.updatestudent{
+	position:relative;margin-top:2vh;display:none;
+}
+.updatestudent.slideleft{
+	animation:slideleft 1s;
+}
+.updatestudent.slideright{
+	animation:slideright 0.4s;
+}
+.updatestudent-studentimagediv{
+	margin-top:40px;text-align:center;margin-bottom:70px;
+}
+.updatestudent-studentimage{
+	width:250px;height:250px;margin-left:auto;margin-right:auto;background:white;border-radius:250px;
+}
+.updatestudent-studentimage img{
+width:250px;height:250px;border-radius:250px;margin-bottom:-40px;
+}
+.update-changeimage{
+	width:60px;height:60px;border:none;background:white;background-image:url('/img/icons/change.png');background-size:cover;border-radius:190px;margin-left:130px;margin-top:-20px;
+}
+.updatestudent-studentimage input{
+	display:none;
+}
+.updatestudent-data{
+	padding:20px 50px 20px 50px;display: flex;flex-direction: column;width:500px;margin-left:auto;margin-right:auto;background:white;border-radius:10px;
+}
+.updatestudent-data div{
+	display:flex;flex-direction: column;margin-top:20px;margin-bottom:20px;
+}
+.updatestudent-data div input{
+	padding:10px;border:2px solid blue;background:transparent;border-radius:5px;text-align:center;z-index:1;font-size:1rem;
+}
+.updatestudent-data div span{
+	position: absolute; margin-left:10px;margin-top:10px;transition:0.2s ease-out;
+}
+.updatestudent-data div span.spanslideup{
+	margin-top:-15px;border:2px solid white;padding:5px;padding-bottom:0px;background:white;color:blue;z-index: 2;
+}
+.updatestudent-controls {
+	text-align:center;margin-top:30px;
+}
+.updatestudent-controls button{
+	background:none;border:2px solid black;transition:0.2s linear;padding:5px 10px 5px 10px;border-radius:10px;margin-top:10px;
+}
+.updatestudent-updatebutton{
+	opacity:0.4;
+}
+.updatestudent-updatebutton:hover{
+	cursor: default;background:none;
+}
+.updatestudent-updatebutton.enable{
+	opacity:1;
+}
+.updatestudent-updatebutton.enable:hover{
+	cursor:pointer;background:black;color:white;
+}
+/* ------------------------------------ */
+
+
+/* MEDIA QUERIES */
+@media (min-width:1200px){
+	.attendencehistoryheading, .attendencehistoryboxdiv, .historyinspect-content{
+		width:1000px;	}
+	
+}
+@media (min-width:780px){
+	.particularbatchdiv{
+		width:90%;
+	}
+	.historyinspect-studentcard{
+		width:90%;
+	}
+	
+}
+
+
+
+@media (max-width:1050px){
+	.historyinspect-studentcard {
+		width:92%;
+	}
+}
+@media (max-width:975px){
+	.historyinspect-studentlist{
+		
+	}
+	.historyinspect-studentcard {
+	margin:10px;
+	}
+}
+@media (max-width:700px){
+	.particularbatch-controls .take-attendence {
+		font-size:0.9rem;
+	}
+	.studentinfo-header img, .updatestudent-header img{
+		width:40px;	
+	}
+	img.studentinfo-back,img.updatestudent-back{
+		height:20px;width:20px;
+	}
+}
+@media (max-width:605px){
+	.historyinspect-studentcard {
+		width:250px;margin:10px auto;
+	}
+}
+/* ----------------------- */
+
+
+/* ANIMATIONS */
+
+/* animation for sliding left */
+@keyframes slideleft{
+	0%{
+		left: 0px;opacity:0.6;
+	}
+	45%{ left:-2000px; transform:scale(0, 0);opacity:0.1;}
+	
+	100%{
+		left:0px;
+			}
+}
+
+@keyframes slideright{
+	0%{
+		left:-2000px;transform: scale(0, 0);opacity:0.1;
+	}
+ 	25%{
+ 		left:-900px;transform:scale(0.4, 0.4);opacity:0.1;
+ 	}
+	100%{
+		left:0px;
+	}
+}

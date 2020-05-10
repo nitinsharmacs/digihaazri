@@ -1,0 +1,105 @@
+.attendencewindowdiv, .removestudentwindowdiv{
+	display: none;
+}
+.attendencewindowdiv.show, .removestudentwindowdiv.show{
+	display:block;
+}
+.attendencewindow, .removestudentwindow{
+	position:relative;
+}
+.attendencewindow.slideleft, .removestudentwindow.slideleft{
+	animation: slideleft 1s;
+}
+.attendencewindow.slideright, .removestudentwindow.slideright{
+	animation: slideright 0.7s;
+}
+
+.attendencewindow-header, .removestudentwindow-header{
+	display:flex;align-items: center;background:white;padding:10px;box-shadow: 1px 1px 4px black;margin:auto;max-width:1500px;
+}
+.attendencewindow-header h3, .removestudentwindow-header h3{
+	margin:0;
+}
+.attendencewindow-header h5, .removestudentwindow-header h5{
+	margin:0;
+}
+.attendencewindow-back, .removestudentwindow-back{
+	width:30px;height:30px;transform:rotate(90deg);
+
+}
+ .attendencewindow-heading, .removestudentwindow-heading{
+	flex:1;text-align:center;
+}
+.attendencewindow-content, .removestudentwindow-content{
+	margin-top:50px;transition:0.2s linear;
+}
+.attendencewindow-studentlist, .removestudentwindow-studentlist{
+	display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap:10px;width:80%;margin-left:auto;margin-right:auto;transition:0.2s linear;margin-top:20px;
+}
+.studentcarddiv{
+	width:100%;background:white;border-radius:5px;transition:0.2s linear;animation:come 0.4s;text-transform: capitalize;box-shadow:inset -1px -1px 3px black;
+}
+.studentcarddiv.checked {
+	background:#eee;
+}
+.studentcarddiv:hover{
+	cursor:pointer;transform: scale(1.02, 1.02);
+}
+.studentcard{
+	width:100%;
+}
+
+.studentimagediv{
+	width:200px;text-align:center;margin-top:20px;height:200px;margin-left:auto;margin-right:auto;line-height:200px;
+}
+.studentimage{
+	width:100%;height:100%;border-radius:100%;text-align:center;filter:drop-shadow(1px 1px 1px black);
+}
+.student-checked{
+	width:30px;height:30px;border-radius:40px;position:absolute;margin-left:10px;margin-top:10px;border:2px solid white;visibility: hidden;transition:0.2 ease-out;z-index:1;
+}
+.student-checked.show{
+	visibility: visible;animation: come 0.1s linear;
+}
+.studentcard .studentname{
+	text-align:center;
+}
+ .studentcard-controls{
+	padding:0px 10px 10px 10px;display:flex;align-items:center;
+}
+.student-information{
+	width:25px;height:25px;border-radius:30px;border:none;font-weight:bold;margin-left:auto;font-style:italic;font-family:monospace;background:#1796ff;box-shadow:0px 0px 2px black;color:white;
+}
+.attendencewindow-submit, .removestudentwindow-submit{
+	text-align:center;padding:10px;background:white;margin:auto;margin-top:50px;box-shadow:1px 1px 5px black;max-width:1500px;
+}
+
+
+.removestudent-submit.disabled{
+	opacity: 0.5;background: lightcoral;color:white;cursor: not-allowed;
+}
+
+
+
+
+/* animation for studentcard */
+
+
+@media (max-width:990px){
+	.studentimagediv{
+		width:150px;height: 150px;
+	}
+}
+@media (max-width:700px){
+	.attendencewindow-back, .removestudentwindow-back{
+		width:20px;height:20px;
+	}
+}
+@media (max-width:545px){
+	.studentcarddiv{
+		width:80%;margin:auto;
+	}
+	.studentimagediv {
+		width:200px;height:200px;
+	}
+}

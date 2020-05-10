@@ -1,0 +1,49 @@
+
+	.createbatchdiv{
+		position:fixed;top:0;right:0;left:0;bottom:0;overflow:auto;z-index: 6;background: rgba(0, 0, 0, 0.5);display: none;
+	}
+	.createbatchdiv.show{
+		display:block;
+	}
+	.createbatch{
+		transition: 0.2s linear;display:none;position: relative;margin-top:10vh;
+	}
+	.createbatch.show{
+		display:block;animation:slideright 0.3s linear;
+	}
+
+	div.batchdetails {
+	
+	}
+	.batchdetailsicon {
+		transform:rotate(0deg);
+	}
+	div.passworddetails{
+		display: none;
+	}
+	.passworddetailsicon {
+
+	}
+	img.rotate {
+		transform:rotate(180deg);
+	}
+
+		.batchpassworddiv img{
+			}
+
+		.batchpasswordinput{
+
+		}
+
+
+@keyframes showdetails {
+	0%{
+		opacity:0;transform:scale3d();
+	}
+	65%{
+		opacity:0.5;transform: scaleY(0.5)
+	}
+	100%{
+		opacity: 1;transform: scaleY(1);
+	}
+}

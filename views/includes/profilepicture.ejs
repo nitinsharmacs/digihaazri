@@ -1,0 +1,18 @@
+<div class='profilepicturediv'>
+		<div class='profilepicture formcontainer'>
+			<button class='profilepicture-closebutton'>X</button>
+			<form class='profilepicture-form' method='POST' enctype="multipart/form-data" action="<%= forteacher?'/admin/particularbatch/changeprofilepicture': '/admin/updateprofileimage' %>">
+				<div class='profilepicture-imagediv'>
+					<img class='profilepicture-img' src='/<%= userinfo.userimageurl %>' alt='profileimage'>
+				</div>
+				<div class='profilepicture-controls'>
+					<input type="hidden" name="imageinfo" value='<%= forteacher?"teacher":"user" %>' >
+					<label class='uploadlabel'>upload</label>
+					<input type='image' src="/img/icons/Upload-Icon-PNG-Image.png" class='yesimagebutton' disabled>
+					<input type='image' src='/img/icons/change.png' class='changeimagebutton' onclick='document.getElementById("imageselect").click(); return false;' alt='Change'>
+					<input type="file" name="profileimageinput" id='imageselect' style='display:none;' onchange='readUrl(this)'>
+
+				</div>
+			</form>
+		</div>
+</div>

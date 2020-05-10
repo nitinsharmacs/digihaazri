@@ -1,0 +1,38 @@
+
+<div class='dialogboxdiv'>
+	<div class='dialog formcontainer'>
+		<button class='dialog-closebutton formclosebutton'>X</button>
+
+		<div class='dialog-header formheader'>
+			<span>
+				<img src="/img/icons/usericon.png" alt='-img'>
+				<h3>Batch Login</h3>
+			</span>
+		</div>
+
+		<div class='dialogcontainer'>
+			<form class="dialog-form" method='POST' action='/admin/openbatch' name='openbatch-form'>
+				<div class='createbatch-details'>
+					<section class='formdetails'>
+						<div class='dialogdetails'>
+							<div class='batchnamediv'>
+							<span class='batchnamespan'>Batch name</span>
+							<input class='batchnameinput' type="text" name="batchname" >
+							</div>
+							<div class='batchpassworddiv formpassworddiv'>
+							<span class='batchpasswordspan'>Batch Password</span>
+							<img class='showhidepasswordimg' src="/img/icons/hidepassword.png">
+							<input class='batchpasswordinput' type="password" name="batchpassword">
+							</div>
+						</div>
+					</section>
+					<section class='submitform'>
+						<input type="submit" name="openbatch" value='Open'>
+						<a id='forgotbatch' onclick='fgtbtchpswd();'>Forgot Password ?</a>
+					</section>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br><br>
+</div>

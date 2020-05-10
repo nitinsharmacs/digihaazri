@@ -1,0 +1,119 @@
+
+.updateprofilediv{
+	position:fixed;top:0;right:0;left:0;bottom:0;overflow:auto;z-index: 6;display:none;background: rgba(255, 255, 255, 0.5);
+
+}
+.updateprofilediv.blur{
+	filter:blur(2px);
+}
+.updateprofilediv.show{
+	display:block;
+}
+.updateprofile{
+	padding:20px;transform-style:preserve-3d;transition: 0.3s linear;animation-delay: 0.1s; display:none;background:transparent;
+}
+.updateprofile.show{
+		display:block;transform: perspective(1000px) rotateY(0deg);animation:comeup 0.3s linear;
+}
+/*transform-style: preserve-3d;
+			transform: perspective( 1000px) rotateY(40deg);*/
+
+/*.informationboxdiv:hover{
+	transform: perspective( 1000px) rotateY(0deg);
+}*/
+
+.updateprofile-header{
+	display:flex;align-items: center;background:white;padding:5px 10px;box-shadow: 1px 1px 4px black;max-width:1024px;margin:auto;
+}
+.updateprofile-header img[alt='profileheader-img']{
+	height:40px;width:40px;margin-left:auto;margin-right:20px;
+}
+
+.updateprofile-header h3{
+	margin-right:auto;margin:0;margin-right:auto;
+}
+img.backimg{
+	height: 20px;width:20px;transform:rotate(92deg);transition:0.2s ease-out;
+}
+img.backimg:hover{
+	cursor:pointer;transform:scale(1.02, 1.02),rotate(92deg);
+}
+.updateprofile-container{
+	width:80%;margin:auto;margin-top:40px;
+}
+.profile-form{
+
+}
+.updateprofile-setimage{
+	transition: 0.3s linear;
+}
+
+.updateprofile-setimage img{
+	width:150px;height:150px;border-radius:100px;
+}
+.updateprofile-setimage img:hover{
+	cursor:pointer;
+}
+.updateprofile-details{
+	display:flex;flex-direction: column;margin-top:25px;
+}
+.updateprofile-details input{
+	padding:5px;margin-top:10px;margin-bottom:10px;border:2px solid #0000ff80;border-radius:5px;font-size:1rem;
+}
+.updateprofile-details button{
+	margin-top:10px;margin-bottom:10px;width:100px;
+}
+.updatepassword-form{
+	margin-top:20px;display:flex;flex-direction: column;border-top:2px solid red;margin-bottom:30px;
+}
+.updatepassword-form label{
+	margin-top:30px;
+}
+.updatepassword-form input{
+	padding:5px;margin-top:10px;margin-bottom:10px;border:2px solid #0000ff80;border-radius:5px;font-size:1rem;
+}
+.updatepassword-form button{
+	margin-top:10px;width:100px;
+}
+
+/* MEDIA QUERIES OF IT */
+@media (min-width:800px){
+	.updateprofile-container{
+		width:700px;
+	}	
+}
+
+@media (max-width:700px){
+	.updateprofile-header{
+		padding:5px 10px;
+	}
+	.updateprofile-header img[alt='profileheader-img']{
+		width:30px;height:30px;margin-right:10px;
+	}
+	.updateprofile-header h3{
+		font-size:1rem;
+	}
+	img.backimg{
+		height:15px;width:15px;
+	}
+	.updateprofile-details input,.updatepassword-form input{
+		font-size:0.9rem;
+	}
+
+}
+
+/*ANIMATION FOR PROFILE WINDOW*/
+@keyframes comeup{
+	0%{
+			transform: perspective(1000px) rotateY(70deg) scale(0.0, 0.0);
+	}
+	50%{
+		transform: perspective(1000px) rotateY(60deg) scale(0.1, 0.1);
+	}
+	75%{
+		transform: perspective(1000px) rotateY(50deg) scale(0.4, 0.4);
+	}
+	100%{
+		transform: perspective(1000px) rotateY(10deg) scale(0.9, 0.9);
+	}
+}

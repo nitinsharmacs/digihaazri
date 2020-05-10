@@ -1,0 +1,18 @@
+<div class='profilepopupdiv'>
+		<div class='profilepopup'>
+			<div class='profilepopup-indicator'>
+			
+			</div>
+		<div class='profilepopup-header'>
+			<img src='/<%= userinfo.userimageurl %>' alt='profile-image'>
+			<h4>Hii! <%= userinfo.username %></h4>
+		</div>
+		<div class='profilepopup-controls'>
+			<a href="#" class='profilepoplink' onclick='<%= forteacher?"openprofilewindow()":"openprofilepassword()" %>;' >Update Profile</a>
+			<form action='/auth/logout' method='POST'>
+				<button class='button'>LogOut</button>
+			</form>
+			
+		</div>
+	</div>
+</div>

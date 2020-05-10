@@ -1,0 +1,45 @@
+<div class='verticalcontrols'>
+		
+		<div class='top-controls '>
+			<div class='control1 <%= path=="/dashboard"?"active":""%> ' onclick="window.location='/admin/dashboard'; ">
+				<img src="/img/icons/dashboard.png">
+				<span>Dashboard</span>
+			</div> 
+			<div class='control2 <%= path=="/batch"?"active":""%>' onclick="window.location='/admin/batch'; ">
+				<img src="/img/icons/batchIcon.png">
+				<span>Batches</span>
+			</div>
+			<div class='control3 <%= path=="/student"?"active":""%>' onclick="window.location='/admin/student'; ">
+				<img src="/img/icons/studentsIcon.png">
+				<span>Students</span>
+			</div>
+			<div class='control4 <%= path=="/teacher"?"active":""%>' onclick="window.location='/admin/teacher'; ">
+				<img src="/img/icons/teacherIcon.png">
+				<span>Teachers</span>
+			</div>
+			<div class='control5'>
+				<img src="/img/icons/recordsIcon.png">
+				<span>Records</span>
+			</div>
+			<div class='control5'>
+				<img src="/img/icons/userIcon.png">
+				<span>User</span>
+			</div>
+		</div>
+		
+		
+		<div class='bottom-controls'>
+			<div class='control-backward' onclick='backward(`<%= currentwindow %>`)'>
+				<img src="/img/icons/back.png">
+				<span>Back</span>
+			</div>
+			<div class='control-forward' onclick='forward()'>
+				<img src="/img/icons/forward.png" >
+				<span>Forward</span>
+			</div>
+			<div class='control8 '>
+				<img src="/img/icons/settingIcon.png" onclick="window.location='/admin/settings'; ">
+				<span>Settings</span>
+			</div>
+		</div>
+</div>

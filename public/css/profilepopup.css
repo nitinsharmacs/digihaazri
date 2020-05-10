@@ -1,0 +1,70 @@
+.profilepopupdiv{
+	top:70px; position:fixed;right:20px;z-index:2;display:none;
+}
+.profilepopupdiv.blur{
+	filter: blur(2px);
+}
+.profilepopup{
+	width:150px;background:white;border-radius:10px;padding:20px;transition:0.2s linear;box-shadow:inset -1px -1px 2px black;display: none;animation: cardcome 0.2s ease-out;
+}
+.profilepopupdiv.show{
+	display:block;
+}
+.profilepopup.show{
+	display: block;
+}
+
+.profilepopup-indicator{
+	background: white;position:absolute;margin-top:-30px;margin-left:126px;height:30px;width:30px;transform:rotate(45deg);
+}
+.profilepopup-header{
+	text-align:center;
+}
+.profilepopup-header h4 {
+	font-size:1rem;text-transform: capitalize;margin:10px auto;
+}
+.profilepopup-header img{
+	height:90px;width:90px;border-radius:100%;
+}
+.profilepopup-controls{
+	display:flex;flex-direction:column;justify-content: center;
+}
+.profilepopup-controls a{
+	text-decoration:none;text-align:center;margin:auto 5px;
+}
+.profilepopup-controls form{
+	text-align:center;
+}
+.profilepopup-controls  button{
+	margin-top:15px;
+}
+
+@media (max-width:637px){
+	.profilepopup{
+		width:150px;
+	}
+	.profilepopup-header h4 {
+		font-size:0.9rem;
+	}
+	.profilepopup-controls a{
+		font-size:0.9rem;
+	}
+	.profilepopup-controls  button{
+		font-size:0.9rem;
+	}
+	.profilepopup-indicator{
+		margin-left:126px;
+	}
+}
+
+@keyframes come {
+	0%{
+		transform:scale(0.9, 0.9);opacity: 0.2;
+	}
+	60%{
+		opacity: 0.5;
+	}
+	100%{
+			transform:scale(1, 1);opacity: 1;
+	}
+}

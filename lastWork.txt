@@ -1,0 +1,60 @@
+Done : 
+
+-> Adding teacher is done that return teacher id.
+
+to do :
+		* BUGS *
+	-> solving the bug of uploading batch image while updating the batch and error avoid to update the batch. but get uploaded. (cause memory flow).	(may be done, check once)
+	-> while creating batch, image get uploaded if error encounter.			(may be done, check once)
+	-> while loading batches, if batch is not present, the loading spinner and create batch button both are shown. show spinner first and if not batch found, show create batch button.(SOLVED)
+	-> while adding student, if guardian email or phone is invalid, there is not any message. Solve this.	(SOLVED)
+	-> while creating batch, all is done but batch entry is not save into users collection.	(DONE)
+	-> While seeing students in student window, the more button even show when there is not more student. when students are loaded, then it removed.	(DONE)
+	12th Feb, 2020
+	-> profilepop coming animation differ for main user and teacher	(DONE)
+	
+		* WORK *
+	-> Manage Teachers, such that adding them also. Check of teacher presence. While making batch, also enter teacher id. Remove teacher redundancy. 	(DONE)
+	-> Adding functionality to add teacher in teacher window. User has to enter teacher id while making new batch. (DONE)
+	-> Adding roll number field into add student form such that the user can able to enter roll number of student entered.		(I will look on it after)
+	-> Ask for old password for changing password of user or teacher (DONE.)
+	-> While making batch, add teacher id functionality to the form.	(DONE)
+	-> Modifiy the adding student window by chaning position and size of studentimage as per nandlal sir. (DONE)
+	-> Edit batch form submitting work to do after learning backbone.js:=> Code must be able to track whether something is changed in the form or not. if something is changed, then save changes button should 		work. To change teachername, teacher has to provided teacherid of another registered teacher. Now for the password updation,  code must be able to track whether password is updated, if updated, validation 		should be done and changes should be submitted.
+	-> Add select all feature in attendence window, remove student window, absent window	(DONE) (OPTIMIZAION IS LEFT ONLY);
+	-> Change pop for profile password asking for main user.	(DONE)
+	-> change style for all information dialog boxes. (DONE)
+	
+	11th Feb, 2020
+	-> Change Look for profile image pop.	(QUITE DONE)
+	-> make icons for delete and inspect history item. Add select feature in attendence historylist also.	( DONE )
+	
+	
+	
+	* ANIMATION WORKS *
+	-> While adding student or in something else form, disabled the submit button until the form data is not valid. If valid, then make submit button enabled using some animation.
+	-> Add closing animation to forms.
+OnProgress : 
+
+
+-> 
+
+
+FEATURES TO ADD IN FUTURE :
+	-> If reqest is taking large time to go to server or server takes large time to get response, then show "network error to user"
+
+
+
+
+	* MANAGING TEACHERS *		(DONE)
+	-> To create teacher, user has to enter teachername, teacher email, teacherphone.
+	-> after creating a teacher, it would return a teacher id as teachername (Not whole name, but a part of the teachername) + random number (4digits). This it would returned to the teacher using email or message 	at phone. Also shown on the display and ask for saving it.
+	
+	-> So, while creating teacher, teacher has to provide batchname, teachername, teacherid and batchpassword.
+	-> If teacher is present, use previos teacher database and if teacher is new then make new entry of teacher. 
+
+
+
+	* ERROR HANDELING *
+	
+	-> Handle error by showing error pop when error comes

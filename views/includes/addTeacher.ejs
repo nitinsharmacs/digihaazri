@@ -1,0 +1,59 @@
+<div class='addstudentdiv'>
+	<div class='addstudent formcontainer '>
+		<button class='addstudent-closebutton formclosebutton'>X</button>
+		<div class='addstudent-header formheader'>
+			<span>
+				<img src="/img/icons/addTeacher.png" alt='profileheader-img'>
+				<h3>Add Teacher</h3>
+			</span>
+		</div>
+		<div class='addstudent-container'>
+			<form name='addstudent-form' class="formcomponent" method='POST' action='' enctype="multipart/form-data">
+				
+				<div class='addstudent-details'>
+					<section class='formdetails'>
+						<label class='sectionlabel'>
+							Teacher Details
+						</label>
+					<div class='teacherdetails'>
+						<div class='studentnamediv'>
+							<span class='studentnamespan'>Teacher name</span>
+							<input class='studentnameinput' type="text" name="teachername" >
+						</div>
+						<div class='studentphonediv'>
+							<span class='studentphonespan'>Teacher phone</span>
+							<input class='studentphoneinput' type="text" name="teacherphone" >	
+						</div>
+						
+						<div class='studentguardiandiv'>
+							<span class='studentguardianspan'>Teacher email</span>
+							<input class='studentguardianinput' type="text" name="teacheremail" >	
+						</div>
+
+						<div class='studentaddressdiv'>
+							<span class='studentaddressspan'>Teacher address</span>
+							<input type="text" name="teacheraddress" class='studentaddressinput'>
+						</div>
+					</div>
+					</section>
+
+					<section class='imagesection'>
+						<label class='sectionlabel'>Select Picture</label>
+							<div class='studentimagecontrol imagesectioncontrol' onclick='document.getElementById("studentuploadimageinput").click(); return false;'  >
+								<label for='studentimage' class='chooseimagelabel' >Choose image</label>			
+							<img class='addstudimage' src="/img/icons/profileicon.png" >
+							</div>
+							<input type="file"  style='display:none;' name="uploadimage" id='studentuploadimageinput' onchange='readUrl2(this, ".addstudimage")'>
+					</section>
+					
+					<section class='submitform'>
+						<span class='showmessagespan'></span>
+						<input type='button' onclick='return(validateStudent("teacher"));' class='studentaddbutton' value='Add'>
+					</section><br>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	<br><br>
+</div>

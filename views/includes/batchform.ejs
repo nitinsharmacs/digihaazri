@@ -1,0 +1,92 @@
+
+<div class='createbatchdiv editbatchdiv'>
+
+	<div class='createbatch editbatch formcontainer '>
+		<button class='createbatch-closebutton editbatch-closebutton formclosebutton'>X</button>
+		<div class='createbatch-header formheader'>
+			<span>
+				<img src="/img/icons/createBatch.png" alt='profileheader-img'>
+				<h3><%= forteacher?'Edit Batch':'Create Batch' %></h3>
+			</span>
+		</div>
+		<div class='createbatch-container'>
+			<form name='addstudent-form' class="formcomponent" method='POST' action="<%= forteacher?'/admin/particularbatch/editbatch':'/admin/createbatch'%>" enctype="multipart/form-data">
+				
+				<div class='createbatch-details'>
+					<section class='formdetails'>
+						<label class='sectionlabel'>
+							Batch Details 
+							 <img src='/img/icons/upwardarrow.png' class='batchdetailsicon toggleimage' > 
+						</label>
+						<div class='batchdetails'>
+							<div class='batchnamediv'>
+								<span class='batchnamespan'>Batch name</span>
+								<input class='batchnameinput' type="text" name="batchname" value='<%= forteacher?batchname: "" %>'>
+							</div>
+							<div class='teachernamediv'>
+								<span class='teachernamespan'>Teacher name</span>
+								<input class='teachernameinput' type="text" name="teachername" value='<%= forteacher?userinfo.username: "" %>'>	
+							</div>
+							<div class='teacheriddiv'>
+								<span class='teacheridspan'>Teacher Id</span>
+								<input type="text" name="teacherid" class='teacheridinput' >
+							</div>
+							<% if(!forteacher){ %>
+							<div class='batchpassworddiv formpassworddiv'>
+								<span class='batchpasswordspan'>Batch Password</span>
+								<img class='showhidepasswordimg' src="/img/icons/hidepassword.png">
+								<input class='batchpasswordinput' type="password" name="batchpassword">
+							</div>
+							<% } %>
+						</div>
+					</section>
+
+					<section class='imagesection'  >
+						<label class='sectionlabel'>Select Picture</label>
+							<div class='batchimagecontrol imagesectioncontrol' onclick='document.getElementById("uploadimageinput").click(); return false;'  >
+								<label for='batchimage' class='chooseimagelabel' ><%= forteacher?'Change':'Choose image' %></label>			
+							<img class='batchimage' src="/<%= forteacher?batchimageurl:'img/icons/profileicon.png' %>" >
+							</div>
+							
+					</section>
+
+					<% if(forteacher){ %>
+					<section class='passwordsection formdetails'>
+						<label class='sectionlabel'>Update Password <img src='/img/icons/downarrow.png' class='passworddetailsicon toggleimage' > </label>
+
+						<div class='passworddetails'>
+								<div class='batcholdpasswordiv formpassworddiv'>
+								<span class='batcholdpasswordspan formpasswordspan'>Old password</span>
+								<img class='showhidepasswordimg ' src="/img/icons/hidepassword.png">
+								<input class='batcholdpasswordinput' type="password" name="batchpassword">
+							</div>
+
+							<div class='batchpassworddiv formpassworddiv'>
+								<span class='batchpasswordspan formpasswordspan' >New password</span>
+								<img class='showhidepasswordimg' src="/img/icons/hidepassword.png">
+								<input class='batchpasswordinput' type="password" name="batchpassword">
+							</div>
+
+							<div class='batchpassworddiv formpassworddiv '>
+								<span class='batchconfirmpasswordspan formpasswordspan'>Confirm password</span>
+								<img class='showhidepasswordimg' src="/img/icons/hidepassword.png">
+								<input class='batchconfirmpasswordinput' type="password" name="batchconfirmpassword">
+							</div>
+						</div>
+						
+
+					</section>
+					<% } %>
+
+					<input type='hidden' name='imageinfo' value='batches'>
+					<input type="file"  style='display:none;' name="uploadimage" id='uploadimageinput' onchange='readUrl2(this, ".batchimage")'>
+					<section class='submitform'>
+						<input type='submit' onclick='return();'  value='<%= forteacher?"Save Changes":"Create" %>' >
+					</section><br>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	<br><br>
+</div>

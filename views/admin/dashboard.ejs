@@ -1,0 +1,107 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body onload='fillbackwardstack(`<%= previouswindow %>`)'>
+	<div class='dashboard'>
+
+		<!-- making top navigation -->
+			<%- include('../includes/navigation.ejs') %>
+		<!-- top navigation end -->
+
+		<!-- vertical dashboard control options for desktop view -->
+			<%- include('../includes/verticalcontrols.ejs') %>
+		<!-- vertical controls end -->
+
+		<!-- vertical dashboard control options for mobile view -->
+			<%- include('../includes/mobilecontrols.ejs') %>
+		<!-- vertical controls end -->
+
+		<!-- horizontal controls for mobile view -->
+		<%- include('../includes/horizontalcontrols.ejs') %>
+		<!-- end  of horizontal controls --->
+		<!-- user profile popup -->
+			 <%- include('../includes/profilepopup.ejs') %> 
+		<!-- user profile popup end -->
+		
+
+		<!-- controls -->
+		<div class='controldiv'>
+			<div class='page-header'>
+				<h2>DashBoard</h2>
+			</div>
+			<% if(error.length>0){ %>
+				<div class='errorwindow'>
+					<div class='error'>
+						<button class='errorclosebutton'>X</button>
+						<h4><%= error[0] %></h4>
+					</div>
+				</div>
+			<% } %>
+			<section class='dashboard-section'>
+				<div class='section-heading'>
+					<img src="/img/icons/featuresIcon.png">
+					<h2>Controls</h2>
+				</div>
+				<div class='dashboardfeaturesdiv'>
+					<div class='dashboardfeatures' onclick='window.location="/admin/batch"; '>
+						<img src="/img/icons/batchIcon.png">
+						<p>Batches</p>
+					</div>
+					<div class='dashboardfeatures' onclick='window.location="/admin/student"; '>
+						<img src="/img/icons/studentsIcon.png">
+						<p>Students</p>
+					</div>
+					<div class='dashboardfeatures' onclick='window.location="/admin/teacher" '>
+						<img src="/img/icons/teacherIcon.png">
+						<p>Teachers</p>
+					</div>
+					<div class='dashboardfeatures'>
+						<img src="/img/icons/recordsIcon.png">
+						<p>Records</p>
+					</div>
+				</div>
+			</section>
+
+
+
+			<section class='dashboard-section'>
+				<div class='section-heading'>
+					<img src="/img/icons/recentActivitiesIcon.png">
+					<h2>Recent Activities</h2>
+				</div>
+				<div class='recent-activitylist'>
+
+				</div>
+				<div>
+					<div class='loader activityloader '>
+				 		<div></div>
+					    <div></div>
+					    <div></div>
+					    <div></div>
+					</div>
+				</div>
+			</section>
+		</div>
+			
+		<!-- controls end -->
+
+		<!-- profile updation -->
+		<%- include('../includes/updateprofile.ejs') %>
+		<!-- profile updation end -->
+
+		<!-- change profile picture form -->
+		<%- include('../includes/profilepicture.ejs') %>
+		<!-- change profile picture form end -->
+		<!-- profilepassword input dialog box -->
+		<%- include('../includes/profilepassword.ejs') %>
+		<!-- end of profilepassword input dialog box -->
+		<!-- error message popup -->
+		<%- include('../includes/errorbox.ejs') %>
+		<!-- end of error message popup -->
+	</div>
+</body>
+<script type="text/javascript" src='/scripts/lib/jquery-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/underscore-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/backbone-min.js'></script>
+<script type="text/javascript" src='/scripts/loadfirst/loadfirst.js' ></script>
+<script src='/scripts/lib/require.js' data-main='/scripts/dashboard/main'></script>
+</html>

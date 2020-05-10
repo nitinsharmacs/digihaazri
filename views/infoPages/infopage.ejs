@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= pageTitle %></title>
+	<link rel="stylesheet" type="text/css" href="/css/infopages.css">
+</head>
+<% if(redirect){ %>
+<body onload='setTimeout(()=>{window.location="/"},3000)' >
+<% } else { %>
+<body>
+<% }%>
+	<div class='infopage'>
+		<div class='infopage-header'>
+			<img class='logo' src="/img/logo/logo.png" alt='digiHaazri'>
+		</div>
+		<div class='infopage-content'>
+			<div class="content-image">
+				<img class='info-image' src="<%= img %>" alt='<%= alt %>'>
+			</div>
+			<div class="content-info">
+				<h1 class='info-heading'><%= heading %></h1>
+				<p class='info-message'><%= message %></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

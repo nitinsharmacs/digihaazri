@@ -1,0 +1,1317 @@
+
+/* scrollbar */
+::-webkit-scrollbar{
+		width:10px;
+	}
+/* scrollbar top and bottom buttons */
+
+	::-webkit-scrollbar-track{
+		box-shadow:  0 0 5px black;
+	}
+	::-webkit-scrollbar-thumb{
+		background:#0892ff;
+	}
+	::-webkit-scrollbar-thumb:hover{
+		background:#0892ffa0;
+	}
+::-moz-scrollbar{
+		width:10px;
+	}
+	::-moz-scrollbar-track{
+		box-shadow:  0 0 5px black;
+	}
+	::-moz-scrollbar-thumb{
+		background:#0892ff;
+	}
+	::-moz-scrollbar-thumb:hover{
+		background:#0892ffa0;
+	}
+
+
+
+body{
+	padding:0;margin:0;font-family:Courier;
+		background: -webkit-linear-gradient(-45deg, #0892FF 5%,  #60abf8 30%,  #7abcff 50%, white 100%);
+   
+	background-attachment: fixed;user-select: none;
+	-webkit-user-select:none;	/* for safari */
+	-moz-user-select:none; 		/* for mozilla */
+	-ms-user-select: none;		/* for explorer */
+	-khtml-user-select:none;
+	font-family:ubuntu;
+	
+	
+}
+button{
+	outline: none;cursor: pointer;
+}
+button:hover {
+	opacity: 0.8;
+}
+
+input{
+	outline: none;
+}
+
+
+img:hover{
+	cursor:pointer;
+}
+.dashboard{
+	width:100%;transition:0.2s linear;
+}
+img{
+	outline:none;user-select: none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+.navigation{
+	position:fixed;background:white;top:0;left:0;right:0;padding-left:0px;padding-right:20px;display:flex;height:60px;z-index: 2;justify-content: flex-end;box-shadow:0px 0px 6px black;
+}
+.navigation.blur{
+	filter:blur(2px);
+}
+
+.dashboardicon{
+	background:#7abcff;width:65px;display:flex;align-items: center;justify-content: center;padding-top:5px;padding-bottom:5px;
+}
+.dashboardicon img{
+	height:40px;width:40px;transition:0.2s linear;
+}
+.dashboardicon img:hover{
+	cursor:pointer;opacity:0.3;
+}
+.desktopsearch{
+	background:transparent;align-items:center;margin-left:auto;display:flex;flex:1;justify-content: flex-end;
+}
+.desktopsearch img{
+	height:30px;width:30px;margin-left:20px;
+}
+
+.searchcom {
+	position:absolute;background:#408bff;width:350px;margin:auto;padding:10px;border-radius:5px;box-shadow:0px 0px 4px 2px black;display: none;flex-flow:column;padding-bottom:20px;right:10%;transform:scale(0.7);animation:fadeIn 0.3s forwards linear;margin-top:6vh;z-index:1;
+}
+.searchcom.show {
+	display:flex;
+}
+.searchcom.remove {
+	animation:fadeOut 0.3s forwards linear;
+}
+.searchcomheader button {
+	background:url('/img/icons/errorIcon.png');background-size:cover;border:none;border-radius:100%;height:30px;width:30px;box-shadow:0px 1px 2px 1px black;
+}
+.searchcomcontent {
+	display: flex;align-items:center;justify-content: center;background:white;width:300px;margin:auto;padding:5px 10px;border-radius:50px;padding-right:15px;display: flex;margin-top:5px;
+}
+.searchcomcontent input {
+	padding:5px 10px;border:none;border:none;border-radius: 5px 0px 0px 5px;font-size:1rem;width:1%;flex:1;font-size:1rem;
+}
+.searchbutton {
+	background:transparent;background-image:url('/img/icons/searchIcon.png');height:30px;width:30px;background-size:cover;border:none;
+}
+.searchcomresult {
+	background:white;margin-top:10px;
+}
+.notification-bell {
+	display: flex;align-items: center;padding:0px 20px;cursor: pointer;
+}
+.notification-header img {
+	height:30px;width:30px;
+}
+.notification-header span {
+	position:absolute;height:20px;width:20px;background:red;border-radius: 100%;color:white;line-height: 20px;text-align: center;margin-left:-15px;margin-top:-5px;
+}
+.notification-content {
+	position: absolute;background:white;box-shadow:0px 0px 2px 2px black;animation:fadeIn 0.3s forwards linear;top:2vh;right:5%;z-index: 1;min-width:250px;border-radius: 2px;display:none;max-width:50%;
+}
+.notification-content.show {
+	display: block;
+}	
+.notification-content.remove {
+	animation:fadeOut 0.3s forwards linear;
+}
+.closenotific {
+	background:none;border:none;width:25px;height:25px;background-image:url('/img/icons/errorIcon.png');background-size:cover;box-shadow:0px 0px 2px 2px black;border-radius:100%;margin-top:5px;margin-left:5px;margin-bottom: 10px;
+}
+.noti-message {
+	padding:5px 20px;
+}
+.notification {
+	background:white;border-bottom:1px solid lightgrey;
+}
+.notification:hover {
+	background:#eee;
+}
+.notification p{
+	margin:0;text-transform: capitalize;padding:10px;transition: 0.3s linear;
+}
+.notification p small {
+	text-transform: lowercase;
+}
+.notification p.seen {
+	opacity: 0.3;
+}
+.userprofile{
+	display:flex;align-items:center;margin-left:auto;justify-content: flex-end;
+}
+.userprofile:hover{
+	cursor:pointer;
+}
+.userprofile img{
+	width:40px;height:40px;margin-right:10px;border-radius:50px;border:1px solid blue;
+}
+img.userprofile-traingle{
+	width:15px;height:15px;opacity:0.4;margin-left:5px;border-radius:0px;border:none;
+}
+.userprofile a{
+	color:black;text-decoration:none;display:block;padding-left:5px;font-weight:1000;text-transform: capitalize;
+}
+.dashboardcontroldiv{
+	background:lightblue;height:50px;width:500px;margin-top:100px;margin-left:10%;display:flex;align-items:center;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;border-radius:50px;
+}
+.dashboardopenclose{
+	height:100%;display:flex;align-items: center;justify-content: center;
+}
+.dashboardopenclose:hover{
+	cursor:pointer;
+}
+.dashboardopenclose img{
+	height:40px;width:40px;background:pink;padding:5px;border-radius:100px;
+}
+.dashboard-section{
+	display:flex;flex-flow: column;border-radius:5px;box-shadow: 0px  0px 5px black;margin:50px 0px;
+}
+
+.dashboard-section .section-heading {
+	padding:0px 8%;background:white;border-radius: 5px 5px 0px 0px;display: flex;align-items: center;
+}
+.dashboard-section .section-heading h2 {
+	padding:0px;margin:10px;
+}
+.dashboard-section .section-heading img {
+	height: 40px;width:40px;
+}
+.dashboardfeaturesdiv{
+	width:80%;margin-left:auto;margin-right:auto;display:grid;grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));grid-gap:20px;padding:20px;
+}
+.dashboardfeatures{
+	padding:10px;background:;text-align:center;width:85%;margin-left:auto;margin-right:auto;transition:0.3s linear;background:white;box-shadow:0px 0px 6px 1px #adacac;border-radius:5px;
+}
+.dashboardfeatures:hover{
+	cursor:pointer;transform:scale(1.02, 1.02);
+}
+.dashboardfeatures img{
+	width:150px;height:150px;border-radius:10px;
+}
+.dashboardfeatures p {
+	font-size:1.2rem;
+}
+
+.recent-activitylist {
+	padding:10px;width:90%;margin:auto;display: grid;grid-template-columns: repeat(auto-fill,minmax(250px,1fr));grid-gap:10px;
+}
+.recent-activity-box {
+	position:relative;background: white;margin:auto;box-shadow:0px 0px 6px 1px #adacac;border-radius: 5px;margin-top:10px;display:flex;flex-flow:column;width:100%;animation: fadeIn 0.3s linear;
+}
+.recent-activity-box.remove {
+	animation: slideleft 0.3s linear;
+}
+.recent-activity-boxinfo {
+	display: flex;justify-content: space-between;padding:0px 10px;flex-flow:column;margin:auto;margin-top:10px;width:90%;
+}
+.recent-activity-box h3 {
+	font-weight: normal;margin:0;padding-bottom:0px;padding-top:5px;width:90%;margin:auto;border-bottom:1px solid lightgrey;
+}
+.recent-activity-boxinfo p {
+	margin:5px;
+}
+.recent-activity-boxinfo p[for='description'] {
+	height:40px;overflow-y:auto;
+}
+.recent-activity-boxinfo p[for='description']::-webkit-scrollbar {
+	width:5px;
+}
+.recent-activity-boxinfo p[for='description']::-webkit-scrollbar-track {
+	box-shadow: none;background: lightgrey;
+}
+.recent-activity-boxinfo p[for='description']::-webkit-scrollbar-thumb {
+	
+}
+.recent-activity-boxinfo small {
+	margin:0;padding-bottom:10px;
+}
+.recent-activity-boxcontrols {
+	display: flex;justify-content: flex-end;padding:10px;
+}
+.recent-activity-boxcontrols button {
+	background: #4489fe;border:none;border-radius: 2px;color:white;padding:5px 10px;font-size:1rem;
+}
+.activityloader{
+	
+}
+/* css for left vertical dashboard control that desktop controls */
+.verticalcontrols{
+	position:fixed;background:white;width:65px;top:60px;min-height:95vh;display:none;z-index:1;flex-flow: column;justify-content:space-between;box-shadow:0px 0px 8px black
+}
+.verticalcontrols.blur{
+	filter:blur(2px);
+}
+.top-controls, .bottom-controls{
+	width:65px;display:flex;align-items:center;flex-flow:column;
+}
+.top-controls {
+	margin-top:20px;
+}
+.bottom-controls {
+	margin-bottom:20px;
+}
+.top-controls div, .bottom-controls div {
+	padding:10px 0px;width:100%;text-align: center;
+}
+
+.top-controls div:hover, .bottom-controls div:hover{
+	background:lightgrey;cursor: pointer;
+}
+.active {
+	background: #1896fd;
+}
+.top-controls div img, .bottom-controls div img{
+	width:30px;height:30px;opacity:0.8;
+}
+
+.top-controls div span, .bottom-controls div span{
+	position: absolute;	background:lightblue;padding:10px;background:#383c4a;color:white;border-radius: 5px;visibility: hidden;
+}
+div.control1:hover span, div.control2:hover span, div.control3:hover span , div.control4:hover span,div.control5:hover span, div.control8:hover span{
+	animation: fadeIn 0.3s forwards linear;animation-delay: 1s;
+}
+
+/* control for horizontal controls */
+.horizontalcontrols{
+	background:white;height:50px;position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;z-index:2;display:none;
+}
+
+.horizontalcontrols div{
+	flex:1;text-align:center;transition:0.2s linear;height:50px;display:flex;align-items: center;justify-content: center;
+}
+.horizontalcontrols div:hover{
+	background:rgba(0, 0, 0, 0.2);cursor:pointer;
+}
+
+.horizontalcontrols img{
+	height:40px;width:40px;
+}
+.horizontalcontrols img:hover{
+	opacity:0.8;
+}
+
+.horizontalcontrols .control1 img{
+	/*height:35px;width:35px;*/
+}
+.horizontalcontrols.blur{
+	filter:blur(2px);
+}
+.control-backward{
+
+}
+.control-backward.disabled{
+	opacity:0.3;cursor:default;
+}
+.control-backward.disabled:hover{
+	cursor:default;
+}
+.control-forward{
+
+}
+.control-forward.disabled{
+	opacity:0.3;cursor:default;
+}
+.control-forward.disabled:hover{
+	cursor:default;
+}
+/* CSS FOR control div for every window */
+
+.controldiv{
+	padding:2%;z-index: 6;margin-top:55px;margin-left:66px;
+}
+.page-header {
+	padding:0px 5%;font-size: 1.2rem;
+}
+.controldiv.blur{
+	filter:blur(2px);
+}
+
+/* CSS FOR MOBILE VERTICAL CONTROLS */
+.mobilecontroldiv{
+	position:fixed;top:0;left:0;z-index:2;width:250px;height:250px;clip-path:circle(0px at 0% 0%);transition:0.2s linear;box-shadow: 1px 1px 2px black;
+}
+.mobilecontroldiv.open{
+	clip-path:circle(250px at 0% 0%);
+}
+.mobilecontroldiv-close{
+	position:absolute;z-index:1;background:#0892ff;width:180px;height:180px;clip-path:circle(180px at 0% 0%);box-shadow: inset 3px 1px 2px black;
+}
+.mobilecontroldiv-closebutton{
+	border:none;height:30px;width:30px;background:none;color:white;font-weight:1000;margin-left:10px;margin-top:10px;
+}
+.mobilecontrol{
+	background:white;display:flex;flex-direction: column;box-shadow: inset 3px 1px 2px black;
+}
+.mobilecontrol div{
+	
+}
+.mobilecontrol img{
+	height:30px;width:30px;transition: 0.2s linear;opacity: 0.7;transition: 0.2s linear;
+}
+.mobilecontrol img:hover {
+	transform:scale(1.03, 1.03);opacity: 1;
+}
+
+div.mobilecontrol-control1{
+	margin-top:40px;
+}
+
+.mobilecontrol-control1 img{
+	margin-left:190px
+}
+.mobilecontrol-control2{
+	margin-top:30px;
+}
+.mobilecontrol-control2 img{
+	margin-left:160px;
+}
+div.mobilecontrol-control3{
+	margin-top:20px;
+}
+.mobilecontrol-control3 img{
+	margin-left:110px;
+}
+div.mobilecontrol-control4{
+	margin-bottom:30px;margin-top:px;
+}
+.mobilecontrol-control4 img{
+	margin-left:40px;
+}
+
+
+/* SOME UNIVERSAL CLASSES */
+.bottom-border{
+	border-bottom: 2px solid red;
+}
+
+.errorwindow{
+
+}
+.error{
+	width:70%;margin-right: auto;margin-left:auto;display:flex;flex-direction: column;box-shadow:1px 1px 2px black;background:lightcoral;border-radius:10px;
+}
+.error button{
+	margin-left:auto;border-radius:0px 10px 0px 0px;border:none;height: 30px;width:30px;
+}
+.error button:hover{
+	opacity:0.8;
+}
+.error h4{
+	text-align:center;
+}
+
+.showmessagespan{
+	margin-left:auto;margin-right: auto;border:2px solid red;padding:5px 5% 5px 5%;border-radius:10px;background:lightcoral;color:yellow;display:none;margin-bottom: 5px;
+}
+
+/* CSS FOR DIALOG BOX */
+.dialogboxdiv{
+	position:fixed;top:0;right:0;left:0;bottom:0;overflow:auto;z-index: 6;background: rgba(255, 255, 255, 0.5);display: none;
+}
+.dialogboxdiv.show{
+	display:block;
+}
+
+.dialog{
+	transition: 0.2s linear;display:none;position: relative;margin-top:30vh;
+}
+.dialog.show{
+	display:block;animation:slideright 0.3s linear;
+}
+.dialog-closebutton{
+	width:30px;height:30px;background:lightgreen;border:none;border-radius:50px;position: absolute;margin-top:-20px;margin-left:-20px;font-weight:600;
+}
+.dialog-closebutton:hover{
+	cursor:pointer;
+}
+
+.disabled{
+	opacity:0.2;
+}
+.disabled:hover{
+	cursor: default;background:none;
+}
+
+/* CSS FOR PROFILE PASSWORD POPUP */
+.profilepassworddiv{
+	position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0, 0, 0, 0.4);z-index: 10;display: none;
+}
+.profilepassworddiv.show{
+	display:block;
+}
+.profilepassword{
+	transition: 0.2s linear;display:none;position: relative;margin-top:30vh;
+}
+.profilepassword.show{
+	display:block;animation:slideright 0.3s linear;
+}
+.profilepassword-close{
+	
+}
+
+/*---------------------------------*/
+
+
+/* CSS FOR SELECT ALL DIV */
+.showselectdiv {
+	display: none;flex-wrap: wrap;align-items: center;margin-top:-30px;margin-left:5%;position: relative;
+}
+.showselectdiv.show {
+	display: flex;animation: slideright 0.3s linear;
+}
+.showselectdiv .showcount {
+	margin-left:20px;font-size:1.2rem;font-weight:bold;color:white;
+}
+.selectall {
+
+}
+.selectallbutton{
+	height:25px;width:25px;border-radius: 100%;border:1px solid black;transition:0.2s ease-out;background: transparent;
+}
+.selectallbutton.seticon {
+	background:url('/img/checkicon.png');background-size:cover;
+}
+.selectall p{
+	margin:0;
+}
+.showselectcontrols {
+	margin-left:auto;padding-right:30px;
+}
+.showselectcontrols div {
+	height:25px;width:25px;
+}
+.showselectcontrols div:hover {
+	cursor: pointer;
+}
+
+
+/*---------------------------------*/
+
+
+/* CSS FOR ERROR MESSAGE POPUP */
+.errorboxdiv{
+	position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0, 0, 0, 0.4);z-index: 100;display: none;
+}
+.errorboxdiv.show{
+	display: block;
+}
+.errorbox{
+	width:350px;background:white;padding:10px;margin-left:auto;margin-right:auto;margin-top:20vh;border-radius:10px;transition: 0.2s linear;box-shadow:0px 0px 6px 1px #adacac;	animation: dialogcome 0.1s linear;
+}
+.errorbox-close {
+	width:30px;height:30px;background:#1796ff;border:none;border-radius:50px;position: absolute;margin-top:-20px;margin-left:-20px;font-weight:600;color:white;box-shadow:1px 1px 3px #1796ff;
+}
+.errorbox-header {
+	text-align:center;
+}
+.errorbox-header span img{
+	height:90px;width:90px;
+}
+.errorbox-details {
+	text-align:center;
+}
+.errorbox-details .expressions h2{
+	margin:5px auto;
+}
+.errorbox-message{
+	
+}
+.errorbox-message p{
+
+}
+.errorbox-controls {
+	text-align:right;
+}
+.errorbox-controls button{
+	background: none;border:2px solid black;height:30px;border-radius: 5px;transition: 0.2s linear;
+}
+.errorbox-controls button:hover{
+	background:black;color:white;font-weight: bold;
+}
+/* ----------------------------- */
+/* css for errorbox */
+.errormessage{
+	position:fixed;background:rgba(255, 0 , 0, 0.5);padding:20px;border:2px solid red;border-radius:10px;left:0;right:0;width:50%;
+}
+
+/* css for confirmation dialog box */
+.confirmationdiv{
+	background:rgba(100, 100, 100, 0.4);position:fixed;top:0;left:0;bottom:0;right:0;z-index:6;overflow-y:auto;overflow-x:hidden;display: none;
+}
+.confirmationdiv.show{
+	display:block;
+}
+
+.confirmationbox{
+	width:500px;background:white;margin-left:auto;margin-right:auto;padding:10px;margin-top:20vh;border-radius:10px;box-shadow:1px 1px 100px lightgrey;animation:dialogcome 0.1s ease-out;
+}
+
+.confirmationbox-message{
+	width:80%;margin:auto;font-weight:bold;font-size:1.2rem;
+}
+.confirmationbox-controls{
+	display:flex;align-items:center;
+}
+.confirmationbox-controls button{
+	border:none;flex:1;margin:10px;padding:10px;transition:0.2s linear;border-radius:5px;
+}
+.confirmation-submitonly.submitting{
+	animation:movinggradient 0.5s ease-in;animation-iteration-count: infinite;font-weight:bold;
+}
+.confirmation-cancle.nonworking, .confirmation-yes.nonworking{
+	opacity: 0.5;
+}
+.confirmation-cancle.nonworking:hover, .confirmation-yes.nonworking:hover{
+	box-shadow: none;cursor:default;
+}
+.confirmationbox-controls button:hover{
+	box-shadow:1px 1px 4px black;
+}
+
+/* CSS FOR MOREMENU */
+.moremenudiv{
+	position: fixed;top:0;right:0;left:0;bottom:0;background: transparent;z-index:1;display: none;
+}
+.moremenudiv.show {
+	display: block;
+}
+
+.moremenu{
+	background: rgb(23, 150, 255);padding:5px 2px;position: absolute;border-radius:2px;box-shadow: 1px 1px 4px black;margin:auto;display: flex;flex-flow:column;display: none;
+}
+
+
+.moremenu a {
+	display:block;padding:5px 10px;margin:5px 0px;text-decoration: none;box-sizing: border-box;transition:0.2s;color:white;text-shadow:0px 1px 5px black;cursor: pointer;
+}
+.moremenu a:hover{
+	background:rgba(0, 0, 255, 0.2);
+}
+
+
+/* CSS FOR BATCHINFO WINDOW */
+.batchinfodiv{
+	position:fixed;top:0;left:0;background:rgba(0, 0, 0, 0.5);right:0;bottom:0;z-index:2;
+}
+.batchinfo {
+	width:90%;max-width:650px;margin:auto;margin-top:15vh;padding:10px;border-radius:5px;background:white;position:relative;animation:slideright 0.3s linear;box-shadow: 0px 0px 6px 1px #adacac;
+}
+.batchinfo.remove {
+	animation:slideleft 0.4s linear;
+}
+.batchinfo-header {
+	padding:5px 10px;display: flex;align-items: center;
+}
+.batchinfo-header img {
+	width:25px;height:25px;transform:rotate(90deg);
+}
+.batchinfo-header h3 {
+	font-size:1.5rem;width: 100%;text-indent: 5%;
+}
+.batchinfo-main {
+	display:flex;
+}
+.batchinfo-contentpart {
+padding:10px;flex:1;border-radius:0px 0px 0px 5px;
+}
+.batchinfo-content {
+
+}
+.batchinfo-infobox {
+	display: flex;align-items: center;
+}
+.batchinfo-infobox label{
+	padding:5px;font-size:1.2rem;text-transform: capitalize;
+}
+.batchinfo-infobox p {
+	font-size: 1rem;padding:5px;text-transform: capitalize;
+}
+.batchinfo-controls {
+	text-align:center;padding:0px 10px;margin-top:20px;
+}
+.batchinfo-controls button {
+	background: none;border:2px solid black;border-radius: 5px;transition: 0.2s linear;font-size:1.2rem;padding:7px 10px;
+}
+.batchinfo-controls button:hover, .batchinfo-controls button:active {
+	background:black;color:white;
+}
+.batchinfo-imagepart {
+	flex:0.5;display: flex;align-items: center;border-radius:0px 0px 5px 0px;flex:0.8;
+}
+.batchinfo-imagepart img {
+height:200px;width: 200px;position: absolute;filter:drop-shadow(0px 0px 1px white);margin-top:-20px;
+}
+
+
+
+/* CSS FOR LOADERS */
+.loadingdiv{
+	text-align:center;
+}
+.loadingdiv.remove{
+	display: none;
+}
+.loader{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-left:auto;margin-right:auto;
+  }
+  .loader div{
+  	
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    margin: 6px;
+    border: 3px solid #3b0062;
+    border-radius: 50%;
+    animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: blue transparent transparent transparent;		/* #3b0062 */
+  }
+  .loader div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .loader div:nth-child(2){
+    animation-delay: -0.3s;
+  }
+  .loader div:nth-child(3){
+    animation-delay: -0.15s;
+  }
+
+
+/* CSS FOR CARD COMPONENT */
+
+.list{
+margin-top:20px;width:80%;display: grid;grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));grid-gap:10px;margin-left:auto;margin-right:auto;
+}
+
+.card{
+	background: #0892ff;display: flex;align-items: center;border-radius:5px;box-shadow:1px 1px 4px black;padding:0px 5px 0px 0px;transition:all 0.2s ease-out;animation: cardcome 0.2s ease-out;
+}
+.card:hover{
+	cursor:pointer;
+}
+.card-image{
+	padding:5px;
+}
+.card-image img{
+	height:150px;width:150px;border-radius:100%;
+}
+.card-info {
+	width:100%;padding:0px 0px 0px 5%;color:white;font-weight: 500;
+}
+.card-info p{
+	text-transform: capitalize;
+}
+.card-controls{
+	height:150px;display: flex;align-items: flex-end;
+}
+.card-controls img {
+	transition: 0.2s linear;height:30px;width:30px;margin-left:auto;margin-top:auto;transform: rotate(90deg);
+}
+/* CSS FOR ADDING STUDENT FORM */
+
+
+
+		
+	.addstudentdiv{
+		position:fixed;top:0;right:0;left:0;bottom:0;overflow:auto;z-index: 6;background: rgba(255, 255, 255, 0.5);display:none;
+	}
+	.addstudentdiv.show{
+		display:block;
+	}
+	.addstudent{
+		transition: 0.2s linear;display: none;position: relative;margin-top:10vh;
+	}
+	.addstudent.show{
+		display:block;animation:slideright 0.3s linear;
+	}
+	
+	.studentpassworddiv img{
+		z-index:2;height:30px;width:30px;position: absolute;margin-left:430px;margin-top:5px;
+	}
+
+
+/* END OF CSS FOR ADDING STUDENT FORM */
+
+
+
+
+/* CSS FOR FORMS */
+.formcontainer {
+	width:500px;background:white;padding:10px;margin-left:auto;margin-right:auto;border-radius:0px 10px 10px 10px;transform: perspective(1000px) rotateY(0deg);transition: 0.2s linear;box-shadow:0px 0px 6px 1px #adacac;
+}
+.formclosebutton{
+	width:30px;height:30px;background:#1796ff;border:none;border-radius:50px;position: absolute;margin-top:-20px;margin-left:-20px;font-weight:600;color:white;box-shadow:1px 1px 3px #1796ff;
+}
+.formclosebutton:hover, .formclosebutton:active {
+	cursor:pointer;
+}
+.formheader{
+	
+}
+.formheader span {
+	display:flex;align-items: center;justify-content: center;
+}
+.formheader span img {
+	width:50px;height:50px;margin-right:10px;border-radius: 5px;
+}
+.formheader span h3 {
+	font-size:1.5rem;
+}
+
+.formdetails {
+	padding:10px;display: flex;flex-direction: column;
+}
+.formdetails div{
+		display:flex;flex-direction: column;margin-top:10px;margin-bottom:0px;position: relative;
+}
+.formdetails div input{
+	padding:10px;box-shadow:0px 0px 5px 0px #00000024;background:transparent;border-radius:5px;z-index:1;border:none;text-indent: 5%;font-weight: bold;font-size:0.9rem;
+	background-position:center;transition:background 0.8s;margin:10px 0px;
+}
+.formdetails div input:hover {
+	background:transparent;background-image:radial-gradient(circle, transparent 1%, white 1%);background-position:center;background-size:20000%;
+}
+.formdetails div input:active {
+background-color:#eee;background-size: 100%;transition:background 0s;
+}
+.formdetails div span{
+	position: absolute; margin-left:10px;margin-top:20px;transition:0.2s ease-out;
+}
+.formdetails div span.spanslideup{
+	margin-top:-5px;border:2px solid white;padding:0px;background:white;color:;z-index: 2;transform: scale(0.95, 0.95);
+}
+
+.sectionlabel {
+	font-size:1.2rem;display: flex;align-items: center;
+}
+.sectionlabel:before, .sectionlabel:after {
+	content: '';width:50px;height:2px;background: #c8b9b9;display:inline-block;margin:0px 5px;
+}
+.sectionlabel img {
+	height:20px;width:20px;margin:0px 8px;transition: 0.5s linear;
+}
+
+.imagesection {
+	padding:0px 20px;
+}
+
+.imagesectioncontrol {
+	display: flex;align-items:center;padding:15px 20px;border-radius:5px;margin-top:20px;background:white;justify-content: center;border: 2px dotted #c8b9b9;transition:0.2s ease-out;
+}
+.imagesectioncontrol:hover {
+	cursor:pointer;transform:scale(1.02, 1.02);box-shadow:1px 1px 3px #1796ff;
+}
+.imagesectioncontrol img {
+	height:60px;width:60px;margin-left:2%;border-radius:5px;margin-left:5%;display: none;
+}
+.chooseimagelabel:hover {
+	cursor: pointer;
+}
+.submitform {
+	text-align:center;margin-top:30px;padding:0px 10px;display: flex;flex-wrap: wrap;
+}
+.submitform input{
+	height:35px;width:100%;margin:auto;background:#1796ff;font-weight: 600;transition: 0.2s ease-out;border:none;color:white;border-radius:5px;transition: 0.2s ease-out;box-shadow:1px 1px 3px #1796ff;
+}
+.submitform input:hover, .submitform input:active {
+	transform:scale(0.95);
+}
+.submitform input:disabled {
+	cursor: not-allowed;transform:scale(1);
+}
+.submitform a {
+	cursor: pointer;margin-top:20px;
+}
+.formpassworddiv img {
+	z-index:2;height:30px;width:30px;position: absolute;margin-left:90%;margin-top:12px;
+}
+/* END OF CSS FOR FORM */
+
+/* CSS FOR USERCONTROLS COMPONENT */
+.usercontrolsdiv {
+			position: fixed;border-radius: 100%;z-index: 2;display: none;
+		}
+		.usercontrolsdiv-img {
+			position: absolute;width:50px;height:50px;border-radius: 100%;margin-left:52px;margin-top:-6px;z-index: 1;
+		}
+		
+		.usercontrolsdiv-img img {
+			height:50px;width:50px;cursor: pointer;
+		}
+
+		.usercontrolsdiv-controls {
+			position: absolute;background:white;width:300px;height:300px;border-radius: 100%;box-shadow: 0px 0px 4px black;transition:0.4s linear;transform: scale(0);margin-left:-73px;margin-top:-132px;
+		}
+		.usercontrolsdiv-controls.open{
+			transform: scale(1);
+		}
+		.usercontrolsdiv-controls div {
+			position: absolute;width:35px;height:35px;border-radius: 100%;text-align:center;transition:0.2s linear;
+		}
+		.usercontrolsdiv-controls div:hover {
+			transform:scale(1.03);opacity: 0.8;
+		}
+		.usercontrolsdiv-controls div:nth-child(1){
+			margin-left:125px;margin-top:20px;
+		}
+		.usercontrolsdiv-controls div:nth-child(2){
+			margin-left:230px;margin-top:85px;
+		}
+		.usercontrolsdiv-controls div:nth-child(3){
+			margin-left:215px;margin-top:210px;
+		}
+		.usercontrolsdiv-controls div:nth-child(4){
+			margin-left:65px;margin-top:210px;
+		}
+		.usercontrolsdiv-controls div:nth-child(5){
+			margin-left:30px;margin-top:90px;
+		}
+		.usercontrolsdiv-controls div img {
+			height:35px;width:35px;opacity: 0.6;
+		}
+		div.controlactive img{
+			opacity: 1;
+		}
+		.usercontrolsdiv-controls div span {
+			display: none;
+		}
+/* END OF CSS FOR USERCONTROLS COMPONENT */
+
+/* CSS FOR CONFIRMATION BOX FINAL */
+.confirmationboxdiv1 {
+	position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0, 0, 0, 0.5);z-index:100; 
+}
+.confirmationbox1 {
+	background:white;width: 350px;margin:auto;margin-top:20vh;padding:10px;border-radius:0px 5px 5px 5px;box-shadow:0px 0px 5px white;animation:dialogcome 0.1s ease-out;transition: 0.2s ease-out;
+}
+.confirmationbox1.remove {
+	transform: scale(0, 0);
+}
+.close-confirmation {
+	position:absolute;width:30px;height:30px;border-radius: 100%;border:none;color:white;font-weight: bold;margin-top:-20px;margin-left:-20px;background:#1796ff;box-shadow: 1px 1px 3px #1796ff
+}
+.confirmationbox1-header {
+	text-align:center;
+}
+.confirmationbox1-header img {
+	height:60px;width:60px;margin:auto;
+}
+.confirmationbox1-header h2{
+	margin:5px auto;
+}
+.confirmationbox1-details p {
+	text-align: center;color:grey;
+}
+.confirmationbox1-controls {
+	display: flex;justify-content: center;
+}
+.confirmationbox1-controls button {
+	border:none;padding:5px 10px;font-size:1.2rem;margin-left:5px;border-radius: 5px;
+}
+.confirmationbox1-controls button:hover {
+	opacity:0.7;
+}
+
+.confirmationbox1-yescontrol {
+	background:#fc0000df;color:white;
+}
+.confirmationbox1-yescontrol img {
+	
+}
+.confirmationbox1-yescontrol:disabled {
+	opacity: 0.5;cursor: not-allowed;
+}
+
+
+/* SOME UNIVERSAL CLASSES */
+.button {
+	background:#4489fe;border:none;padding:5px 10px;border-radius:2px;color:white;font-size:1rem;
+}
+
+/* MESSAGE BOX */
+.messageboxpopup {
+	position:fixed;z-index: 100;background:grey;color:white;padding:12px 20px;bottom:2%;left:5%;min-width:250px;text-align:center;animation:messagecome 4s forwards ease-in;
+}
+.messageboxpopup p{
+	margin:0;
+}
+@keyframes messagecome {
+	0%{
+		opacity:0;transform: translateY(10px);
+	}
+	10%{
+		opacity: 1;transform: translateY(0);	
+	}
+	100%{
+		opacity: 0.2;transform: translateY(-100px);
+	}
+}
+.processingloadingdiv {
+	display: none;
+}
+.processingloader, .processingloader:after {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.processingloader {
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  border-right: 3px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.8s infinite linear;
+  animation: load8 0.8s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* END OF CSS FOR CONFIRMATION BOX FINAL */
+
+/* MEDIA QUERIES */
+
+/* for mobile vertical controls and desktop vertical controls */
+@media (min-width:894px){
+		.verticalcontrols{
+			display:flex;
+		}
+		.mobilecontroldiv{
+			display:none;
+		}
+		.desktopsearch{
+			display:flex;
+		}
+}
+
+/* for navigatoin bar */
+@media (max-width:893px){
+	.navigation{
+		height:40px;padding-top:5px;padding-bottom:5px;
+	}
+	.dashboardicon{
+		height:40px;margin-top:-5px;width:55px;
+	}
+	.dashboardicon img{
+		height:30px;width:30px;
+	}
+	.controldiv{
+		margin-left: 0px;margin-bottom:60px;
+	}
+	.horizontalcontrols{
+		display:flex;
+	}
+	.horizontalcontrols img{
+		width:30px;height:30px;
+	}
+	.usercontrolsdiv {
+		display: block;
+	}
+	.userprofile img{
+		width:30px;height:30px;margin-right:0;
+	}
+	.userprofile a{
+		font-size:0.9rem;
+	}
+	img.userprofile-traingle{
+		width:10px;height:10px;
+	}
+}
+
+
+@media (max-width:817px){
+	.dashboardfeaturesdiv {
+		display:flex;flex-wrap:wrap;justify-content: center;grid-gap:0px;
+	}
+	.dashboardfeatures{
+		width:200px;margin:10px;
+	}
+	.dashboardfeatures p{
+		font-size:1rem;
+	}
+	.dashboardfeatures img{
+		height:100px;width:100px;margin:0;
+	}
+	.dashboard-section .section-heading h2{
+		font-size:1.2rem;
+	}
+	.dashboard-section .section-heading img{
+		height:25px;width:25px;
+	}
+	.recent-activity-box h3{
+		font-size:1rem;
+	}
+	.recent-activity-boxinfo p[for='description']{
+		font-size:0.9rem;
+	}
+	.page-header{
+		font-size:1rem;
+	}
+
+}
+
+@media (max-width:700px){
+	.formcontainer{
+		width:80%;
+	}
+	.formheader span img{
+		width:30px;height:30px;
+	}
+	.formheader span h3 {
+		font-size:1.2rem;
+	}
+	.formdetails div input{
+
+	}
+	.moremenu a{
+		font-size:0.9rem;
+	}
+	.card-info p{
+		font-size:0.9rem;
+	}
+	.card-controls img {
+		width:20px;height:20px;margin-bottom:10px;
+	}
+	.card-image img{
+		width:100px;height:100px;
+	}
+	.errorbox{
+		width:250px;
+	}
+	.errorbox-close{
+		height:25px;width:25px;
+	}
+	.errorbox-header span img{
+		height:60px;width: 60px;
+	}
+	.errorbox-details .expressions h2{
+		font-size:1.2rem;
+	}
+	.errorbox-message p{
+		font-size: 0.9rem;
+	}
+	.confirmationbox1-header h2{
+		font-size:1.2rem;
+	}
+	.confirmationbox1-details p {
+		font-size: 0.9rem;
+	}
+	.confirmationbox1-controls button {
+		font-size:0.9rem;
+	}
+	.close-confirmation{
+		height:25px;width:25px;
+	}
+	.processingloader {
+		width:15px;height:15px;
+	}
+	.notification-header img {
+		width:25px;height:25px;
+	}
+	.closenotific{
+		height:20px;width:20px;
+	}
+	.notification p{
+		font-size: 0.9rem;
+	}
+	.desktopsearch img{
+		height:25px;width:25px;
+	}
+	.searchcom{
+
+	}
+	.searchcomcontent{
+		width:80%;padding:;
+	}
+	.searchcomheader button {
+		height:25px;width:25px;
+	}
+	.searchcomcontent input{
+		font-size: 0.9rem;
+	}
+	.searchbutton{
+		height:25px;width:25px;
+	}
+	.batchinfo {
+		margin-top:20vh;
+	}
+	.batchinfo-header img {
+		height:20px;width:20px;
+	}
+	.batchinfo-header h3{
+		font-size:1rem;margin:5px;
+	}
+	.batchinfo-infobox label, .batchinfo-infobox p{
+		font-size:0.9rem;margin:5px;
+	}
+	.batchinfo-imagepart img{
+		height:150px;width:150px;
+	}
+}
+
+@media (max-width:635px){
+	.dashboardfeatures{
+		width:80%;
+	}
+	
+}
+@media (max-width: 470px){
+	.batchinfo-infobox label, .batchinfo-infobox p{
+		margin:1px;
+	}
+	.batchinfo-imagepart img{
+		height:80px;width:80px;
+	}
+}
+@media (max-width: 400px){
+	.confirmationbox1{
+		width:90%;margin:auto;
+	}
+}
+/* animation */
+@keyframes dialogcome{
+	0%{
+		transform:scale(2, 2);opacity:0.2;
+	}
+	100%{
+		transform:scale(1, 1);
+	}
+}
+
+@keyframes movinggradient{
+	0%{
+		background:linear-gradient(45deg, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen );
+	}
+	
+	100%{
+		background:linear-gradient(45deg,  lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue, lightgreen, skyblue);
+	}
+}
+
+/*	animation for loader*/
+ @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes cardcome {
+  	0%{
+  		transform: scale(0.9, 0.9); opacity: 0.5;
+  	}
+  	60%{
+  		opacity:0.6;
+  	}
+  	100%{
+  		transform:scale(1, 1); opacity: 1;
+  	}
+  }
+
+
+/* ANIMATION FOR FORM COME */
+@keyframes formcome{
+	0%{
+			transform: perspective(1000px) rotateY(70deg) scale(0.0, 0.0);
+	}
+	50%{
+		transform: perspective(1000px) rotateY(60deg) scale(0.1, 0.1);
+	}
+	75%{
+		transform: perspective(1000px) rotateY(50deg) scale(0.4, 0.4);
+	}
+	100%{
+		transform: perspective(1000px) rotateY(10deg) scale(0.9, 0.9);
+	}
+}
+
+
+@keyframes slideright{
+	0%{
+		left:-2000px;transform: scale(0, 0);opacity:0.1;
+	}
+ 	25%{
+ 		left:-900px;transform:scale(0.4, 0.4);opacity:0.1;
+ 	}
+	100%{
+		left:0px;
+	}
+}
+
+@keyframes slideleft{
+	0%{
+		left: 0px;opacity:0.6;
+	}
+	45%{ left:-2000px; transform:scale(0, 0);opacity:0.1;}
+	
+	100%{
+		left:0px;
+			}
+}
+
+@keyframes fadeIn{
+	0% {
+		opacity:0;transform:scale(0.8);visibility: visible;
+	}
+	50%{
+		opacity: 0.5;transform:scale(1.05);visibility: visible;
+	}
+	100%{
+		opacity: 1;transform:scale(1);visibility: visible;
+	}
+}
+
+@keyframes fadeOut{
+	0%{
+		opacity:1;transform:scale(1);
+	}
+	
+	100%{
+		opacity: 0;transform: scale(0.8);
+	}
+}

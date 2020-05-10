@@ -1,0 +1,30 @@
+<div class='admincontroldiv'>
+	<div class='admincontroldiv-header'>
+		<div class='header-controls'>
+			<h2>HEADING</h2>
+			<ul>
+				<li><a href="/admin/batch" class='<%= path=="/batch"?"bottom-border": ""%>'>Batches</a></li>
+				<li><a href="#">Students</a></li>
+				<li><a href="#">Records</a></li>
+				<li><img src="/img/icons/more.png"></li>
+			</ul>
+		</div>
+		
+	</div>
+	<hr style='border:1px solid lightgrey'>
+	<% if(error.length>0){ %>
+	<div class='errorwindow'>
+				<div class='error'>
+					<button class='errorclosebutton'>X</button>
+					<h4><%= error[0] %></h4>
+				</div>
+	</div>
+	<% } %>
+	<div class='batchcontentdiv'>
+		
+		<!-- Content of admin windows -->
+
+		<!-- end of content div of admin windows -->
+
+	</div>		
+</div>

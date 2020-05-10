@@ -1,0 +1,35 @@
+<div class="studentinfodiv">
+	<div class="studentinfo">
+		<div class="studentinfo-header">
+			<img src="/img/icons/traingle.png" class='studentinfo-back' onclick="closestudentinfo();">
+			<img src="/images/usericon.png" >
+			<h4>Student Information</h4>
+		</div>
+		<div class="studentinfo-content">
+			<div class="studentinfo-image">
+				<img src="/images/usericon.png" alt='studentimage' class='studentinfo-studentimage'>
+			</div>
+			<div class="studentinfo-data">
+				<ul class='studentinfo-ul'>
+				<!-- 	<li>Student Name : Nitin</li>
+					<li>Student Age : 12</li>
+					<li>Student Phone : 9667037909</li>
+					<li>Student Guardian : nitin@gmail.com</li>
+					<li>Student Address : krishan vihar</li> -->
+				</ul>
+				<div class='studentinfo-rating'>
+					<h4>Present Rating</h4>
+					<div class='progressdiv'>
+						<div class='progressbar'>0%</div>
+					</div>
+				</div>
+			</div>
+			<div class='studentinfo-controls'>
+				<button class="studentinfo-updatebutton">Update ?</button>
+			</div>
+		</div>
+	</div>
+	<!-- update student block -->
+	<%- include('./updatestudent.ejs') %>
+	<!-- end of update student block -->
+</div>

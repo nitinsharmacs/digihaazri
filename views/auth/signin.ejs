@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= pageTitle %></title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body>
+	
+	<main class='maindiv'>
+		<div class='login-header'>
+			<img class='logo' src="/img/logo/logo.png" alt='digiHaazri'>
+		</div>
+		<div class='logindiv'>
+			<img src="/img/icons/signinLogo.png" alt='login'>
+				<form class='login-form' name='login-form' method='POST' action='/auth/login'>
+					<input type='text' placeholder='Username Or Email' name='usernameEmail'>
+					<input type="password" name="password" placeholder='Enter Password'>
+					<button type='submit'>Login</button>
+					<a class='forgotpassword' href='/auth/forgotpassword'>Forgot password?</a>
+				</form>			
+		</div>
+		<% if(loginerror.length>0){ %>
+			<div class='errormessage'>
+				<h4><%= loginerror[0] %></h4>
+			</div>
+			<% } %>
+			<br><br>
+	</main>
+</body>
+<script src='/scripts/lib/require.js' data-main='/scripts/Auth/main'></script>
+</html>

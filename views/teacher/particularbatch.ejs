@@ -1,0 +1,171 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/particularbatch.css">
+<link rel="stylesheet" type="text/css" href="/css/batchform.css">
+<link rel="stylesheet" type="text/css" href="/css/attendencewindow.css">
+<link rel="stylesheet" type="text/css" href="/css/absentwindow.css">
+</head>
+<body onload='fillbackwardstack(`<%= previouswindow %>`);'>
+
+<div class='con' id='content'>
+		<div class='dashboard'>
+
+		<!-- making top navigation -->
+			<%- include('../includes/navigation.ejs') %>
+		<!-- top navigation end -->
+
+		<!-- vertical dashboard control options for desktop view -->
+			<%- include('../includes/verticalcontrols.ejs') %>
+		<!-- vertical controls end -->
+
+		<!-- vertical dashboard control options for mobile view -->
+			<%- include('../includes/mobilecontrols.ejs') %>
+		<!-- vertical controls end -->
+		<!-- horizontal controls for mobile view -->
+			<%- include('../includes/horizontalcontrols.ejs') %>
+		<!-- end  of horizontal controls --->
+		<!-- user profile popup -->
+			<%- include('../includes/profilepopup.ejs') %>
+		<!-- user profile popup end -->
+		
+		
+		<!-- controls for content of the window-->
+			<div class='controldiv'>
+			
+					<div class='particularbatchdiv' >
+
+						<div class="particularbatch-header">
+							<div class="particularbatch-heading">
+								<img src="/<%= batchimageurl %>">
+								<h2><%= batchname %></h2>
+
+							</div>
+							<div class="particularbatch-controls">
+								<img src="/img/icons/plusicon.png" class='add-student'>
+								<img src="/img/icons/editicon.png" class='edit-batch'>
+								<a href="#" class='take-attendence'>Take Attendence</a>
+								<img src="/img/icons/more.png" class='particularbatch-more'>
+								<%- include('../teacherIncludes/moremenu.ejs') %>
+							</div>
+
+						</div><br>
+						<%- include('../includes/usercontrols.ejs') %>
+						
+						<div class='particularbatch-errors'>
+							<% if(error.length>0){ %>
+								<div class='errorwindow'>
+									<div class='error'>
+										<button class='errorclosebutton'>X</button>
+										<h4><%= error[0] %></h4>
+									</div>
+								</div>
+							<% } %>
+						</div>
+
+						<div class='particularbatch-content'>
+							<div class='particularbatch-contentheading'>
+								<h3>Attendence History</h3>
+							</div>
+
+							<div class='particularbatch-contenthistory'>
+								<div class='attendencehistoryheadingdiv'>
+									<div class='attendencehistoryheading'>
+										<h4>Sr. </h4>
+										<h4>Date</h4>
+										<h4>Time</h4>
+										<h4>Present</h4>
+									</div>
+								</div>	
+								<!-- history box to load -->
+								<div class='showselectdiv'>
+								     	<div class='selectall'>
+								     		<button class='selectallbutton' onclick='selectAll(this,"historylist", "selectHistory");'></button>
+								     		<p>All</p>
+								     	</div>
+								     	<p class='showcount'>Select Students</p>
+								     	<div class='showselectcontrols'>
+								     		<div onclick="return(deletehistory(undefined, this))" class='deletehistorybutton' onmouseover="this.setAttribute('class', 'deletehistorybutton change')" onmouseout="this.setAttribute('class', 'deletehistorybutton')">	
+								     		</div>
+								     	</div>
+		   						  </div>
+								<div class='historylist'>					
+									<!-- HISTORY LIST WILL BE HERE -->
+
+									
+								</div>
+								
+								<!-- end of history box  -->
+							</div>
+							<div class="loadingdiv">
+							 	<div class='loader'>
+							 		<div></div>
+								    <div></div>
+								    <div></div>
+								    <div></div>
+							 	</div>
+		    				</div>
+							<div class='particularbatch-loadmore'>
+								<a href='#' onclick='return(loadhistory());'>Load More</a>
+							</div>
+							<br><br><br>
+						</div>
+					</div>
+					
+					<!-- attendence window showld be pasted here  -->
+					
+					<%- include('../teacherIncludes/attendencewindow.ejs') %>
+					
+					<!-- end of attendence window -->
+					<!-- absent window -->
+					<%- include('../teacherIncludes/absentwindow.ejs') %>
+					<!-- end of absent window -->
+
+					<!-- history inspect window -->
+					<%- include('../teacherIncludes/historyinspect.ejs') %>
+					<!-- end of history inspect window -->
+
+					<!-- remove student wndow -->
+					<%- include('../teacherIncludes/removestudents.ejs') %>
+					<!-- end of remove student window -->
+
+				
+			</div>
+		<!-- controls end -->
+
+		<!-- profile updation -->
+		<%- include('../includes/updateprofile.ejs') %>
+		<!-- profile updation end -->
+
+		<!-- change profile picture form -->
+		<%- include('../includes/profilepicture.ejs') %>
+		<!-- change profile picture form end -->
+		<!-- window for create new batch -->
+		<!-- end of window for create new batch -->
+		<!-- confirmation dialog box -->
+	<%- include('../teacherIncludes/confirmationdialog.ejs') %>
+		<!-- end of confirmation dialog box -->
+
+		<!-- add student -->
+		<%- include('../teacherIncludes/addstudent.ejs') %>
+		<!-- end of add student -->
+		<!-- edit batch -->
+		<%- include('../includes/batchform.ejs') %>	
+		<!-- edit batch end -->
+		<!-- student information window -->
+				<%-include('../teacherIncludes/studentinfowindow.ejs') %>
+		<!-- end of student information window -->
+
+		<!-- error message popup -->
+		<%- include('../includes/errorbox.ejs') %>
+		<!-- end of error message popup -->
+	
+	
+	
+</div>
+	
+</body>
+<script type="text/javascript" src='/scripts/lib/jquery-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/underscore-min.js'></script>
+<script type="text/javascript" src='/scripts/lib/backbone-min.js'></script>
+<script type="text/javascript" src='/scripts/loadfirst/loadfirst.js' ></script>
+<script src='/scripts/lib/require.js' data-main='/scripts/particularbatch/main'></script>
+</html>
