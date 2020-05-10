@@ -8,9 +8,10 @@ define(['../models/Recentacti/RecentactiM', '../collections/Recentacti/Recentact
 			method:'POST',
 			body:{}
 		}).then(res=>res.json()).then(result=>{
+			console.log(result)
 			if(!result) 
 				throw new Error('Error while fetching activities');
-			result.data.forEach(acti=>{
+			result.data && result.data.forEach(acti=>{
 				recentactic.add(new RecentactiM(acti));
 			});
 			const recentactivs = new RecentactiVs({model:recentactic,el:'.recent-activitylist'});

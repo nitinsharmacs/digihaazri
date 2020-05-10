@@ -1,7 +1,7 @@
 const Config = require('../../../models/user_config');
 
 // import util methods 
-const makeError = require('../../../util/util');
+const makeError = require('../../../util/util').makeError;
 
 // getting recent activities
 const getRectActi = (req, res, next) => {

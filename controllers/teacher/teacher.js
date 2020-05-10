@@ -907,8 +907,8 @@ const fgtbtchpswd = (req, res, next) => {
 		return next(err);
 	}
 	req.session.fgtbtchpswd = {
-		teachername:decodedToken.teachername,
-		teacherid:new mongodb.ObjectId(decodedToken.teacherid),
+		username:decodedToken.username,
+		batchid:new mongodb.ObjectId(decodedToken.batchid),
 		valid:true
 	}
 	req.session.save();
