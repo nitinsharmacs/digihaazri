@@ -1,7 +1,7 @@
 define(['../models/Auth/SigninM','../views/Auth/SigninV'],(SigninM,SigninV)=>{
 	const resendOTP = () => {
 		$('.resendotp').html(`<div class='processingloader'></div>`)
-		fetch('http://localhost:3001/auth/sendOTP', {
+		fetch('/auth/sendOTP', {
 			method:'POST',
 			headers:{'Content-Type':'application/json'},
 			body:JSON.stringify({
