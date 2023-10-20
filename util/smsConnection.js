@@ -2,8 +2,8 @@ const util = require('util');
 const Nexmo = require('nexmo');
 
 const nexmo = new Nexmo({
-	apiKey: '12fc0d4c',
-	apiSecret: 'suediIy1DKBn485H',
+	apiKey: '',
+	apiSecret: '',
 });
 
 const sendMessage = (From, To, text) => {
